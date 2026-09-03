@@ -166,6 +166,28 @@ assert_contains "products/index.html" "tier--open"
 assert_contains "products/index.html" "tier--commercial"
 assert_contains "products/index.html" "tier--research"
 
+assert_contains "index.html" "<svg"
+assert_contains "index.html" "The stack"
+assert_contains "index.html" "tier--open"
+assert_contains "index.html" "MLambda Turing"
+assert_contains "index.html" "Hilbert"
+assert_contains "index.html" "Early access"
+assert_file "method/index.html"
+assert_contains "method/index.html" "<svg"
+assert_contains "method/index.html" "TLA+"
+assert_contains "method/index.html" "17 specialised agents"
+assert_contains "method/index.html" "only proofs do"
+assert_contains "method/index.html" "genesis.mlambda.net"
+assert_file "services/index.html"
+assert_contains "services/index.html" 'id="consulting"'
+assert_contains "services/index.html" 'id="commercial-licence-and-support"'
+assert_contains "services/index.html" 'id="early-access"'
+assert_contains "services/index.html" "roy.gonzalez@mlambda.net"
+assert_file "sitemap.xml"
+for r in products method services about products/turing products/genesis products/aleph products/actors products/data products/ui products/os products/hilbert; do assert_contains "sitemap.xml" "/$r/"; done
+assert_contains "index.html" "og:title"
+assert_contains "products/genesis/index.html" "og:description"
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi

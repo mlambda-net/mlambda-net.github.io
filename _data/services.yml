@@ -1,0 +1,36 @@
+engagements:
+  - id: consulting
+    name: Consulting
+    summary: >-
+      Architecture and delivery with the MLambda stack, for teams that need a system to be
+      correct rather than merely shipped.
+    includes:
+      - Actor-model and reactive system design on MLambda.Actors
+      - Distributed data on MLambda.Data, or specification-first design of your own store
+      - Formal specification in Z and model checking in TLA+ for the parts that must not fail
+      - Language and compiler tooling on Genesis — domain languages, parsers, generators
+    start: Write with a description of the system and its hardest invariant.
+
+  - id: commercial-licence-and-support
+    name: Commercial licence and support
+    summary: >-
+      For the commercial-tier products — Turing, Data, Aleph, UI and OS — and for
+      supported use of the open ones.
+    includes:
+      - A licence for the product and its updates
+      - A support channel with a named engineer
+      - Upgrade guidance across versions
+      - Priority on defects that affect your deployment
+    start: Write with the product, the deployment topology, and the timeline.
+
+  - id: early-access
+    name: Early access
+    summary: >-
+      Access to private builds and repositories for teams evaluating the commercial tier
+      before committing to it.
+    includes:
+      - Builds and source for the product under evaluation
+      - Direct contact with the engineer who built it
+      - A defined evaluation window and exit criteria
+      - The option to convert to a commercial licence
+    start: Write with the product you want to evaluate and what you intend to build with it.
