@@ -269,6 +269,13 @@ assert_contains "articles/the-code-era-is-over/index.html" "It never sees the co
 assert_file "images/articles/ns-13-knowledge-era.png"
 assert_contains "articles/index.html" "The code era is over"
 
+assert_file "articles/system-two/index.html"
+assert_contains "articles/system-two/index.html" "kambhampati24a"
+assert_contains "articles/system-two/index.html" "language model gathers; the proofs decide"
+assert_contains "articles/system-two/index.html" "consistent falsehood that no axiom contradicts will pass"
+assert_file "images/articles/ns-14-system-two.png"
+assert_contains "articles/index.html" "System 2 for machines"
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi

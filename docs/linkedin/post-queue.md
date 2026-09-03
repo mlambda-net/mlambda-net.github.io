@@ -254,3 +254,19 @@ The human states what the system is and grounds the waivers. The machine infers,
 Edges stated in the article: one target (C#) today, the second on the public roadmap; the analysis still finds emitter defects; Genesis is 0.x. The thesis is the direction. https://www.mlambda.net/articles/the-code-era-is-over/
 
 #Metaprogramming #DSL #DDD #SoftwareArchitecture #AI #ModelDrivenEngineering
+
+---
+
+## Day 18 — System 2 for machines
+
+Kahneman gave business its most useful map of the mind: System 1, fast and intuitive; System 2, slow and logical. A language model is a System 1. That's the most precise thing you can say about it — and the key to what it's worth.
+
+A System 1 can't verify itself (a second sample isn't a second opinion). It can't plan without something telling it what's legal. It doesn't know what it knows — confidence is just another token. It can't be consistent, because it has strings, not statements. The ICML 2024 position paper says it plainly: LLMs can't plan or self-verify on their own.
+
+Look at what the frontier labs did when the answer had to be right: AlphaProof paired a model with the Lean proof assistant and reached Olympiad silver. The model proposes; a formal system decides. The direction is set.
+
+The question is who builds a System 2 general enough to sit under a business. That's what MLambda's expert system is: sortal, epistemic, deontic, alethic and temporal logic in Shin, an admission gate, and a verdict on every answer — Known, Believed (with confidence), Unknown, Contradicted — with the proof attached.
+
+Every model on the market is a System 1. The System 2 is the scarce part, and it's engineered, not trained. https://www.mlambda.net/articles/system-two/
+
+#NeuroSymbolicAI #AI #LLM #FormalMethods #ExpertSystems #Investing
