@@ -58,7 +58,7 @@ Claims come from the repositories on this machine and from live artifacts, verif
 | MLambda.UI | no LICENSE file | `mvvm.mlambda.net` |
 | MLambda.OS | no LICENSE file | `mlambda-net.github.io/MLambda.OS` |
 | Hilbert / ISLT | no LICENSE file | none — research |
-| Factory (Turing · Gears · Thinker · Bet · Actor.Agent) | Genesis MIT for the workbench; the factory modules and Actor.Agent are private | `genesis.mlambda.net` (architecture, method book) |
+| Turing — the architecture platform (Turing · Gears · Thinker · Bet · Actor.Agent) | Genesis MIT for the workbench; the factory modules and Actor.Agent are private | `genesis.mlambda.net` (architecture, method book) |
 
 **Tier rule:** a product is labelled **Open · MIT** only if a `LICENSE` file exists in its
 repository (today: Actors, Genesis). Every other product is **Commercial · early access**.
@@ -146,14 +146,14 @@ Liquid via `sort: "weight"`.
 All eight cards, grouped by tier: Open · MIT first, then Commercial · early access, then
 Research.
 
-### `/products/<slug>/` × 8 — product pages (`product.html` layout)
+### `/products/<slug>/` × 8 — product pages (the Turing page additionally carries a six-beat illustrated story on real workbench screenshots in `images/turing/`) (`product.html` layout)
 
 Header: title, tagline, tier badge, status in mono. Rail: *Where to verify* (docs URL,
 package links) and *Technology* tags. Body: the three H2 sections from the document.
 
 | slug | title | tier | status | "How to get it" |
 |---|---|---|---|---|
-| `factory` | MLambda Factory | commercial | in active development; demonstrations by arrangement | request early access |
+| `turing` | MLambda Turing | commercial | in active development; demonstrations by arrangement | request early access |
 | `genesis` | Genesis | open | published on NuGet | `dotnet add package MLambda.Genesis.Parser` |
 | `aleph` | Aleph | commercial | v1.2.0 | request early access |
 | `actors` | MLambda.Actors | open | v2.2 on NuGet | `dotnet add package MLambda.Actors` |
