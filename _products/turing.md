@@ -29,8 +29,8 @@ LLM providers and retrieval acquire knowledge; a deterministic grammar formalise
 forward-chaining engine proves over it; a proof kernel re-checks; a symbolic reinforcement
 learner improves what is believed over time. The LLM never answers. Only proofs do.
 
-Alongside it, **MLambda.Actor.Agent** packages the same method as a Claude Code plugin: 17
-specialised agents — research, conceptualisation, formation into Z, production planning,
+Alongside it, **MLambda.Actor.Agent** packages the same method as a Claude Code plugin: 17 specialised agents
+ — research, conceptualisation, formation into Z, production planning,
 sequence modelling, failure analysis, TLA+ verification, code generation, BDD testing,
 benchmarking, cleanup, cluster deployment, integration demo, application architecture,
 topology deployment, diagnostics, release — that take a business description to a deployed
