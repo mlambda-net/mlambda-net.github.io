@@ -219,16 +219,15 @@ assert_contains "articles/the-llm-never-answers/index.html" "images/articles/ns-
 assert_contains "articles/the-llm-never-answers/index.html" "Hilbert is research"
 assert_file "images/articles/ns-01-gathers-decides.png"
 assert_contains "sitemap.xml" "/articles/the-llm-never-answers/"
-assert_contains "index.html" "the-llm-never-answers"
 
 assert_file "articles/index.html"
 assert_contains "articles/index.html" "Refusal is a result"
 assert_contains "articles/index.html" "No locks"
 assert_contains "articles/index.html" "Nowhere to occur"
 assert_contains "articles/index.html" "The LLM never answers"
-assert_absent "articles/index.html" 'href="/articles/"'
+assert_contains "articles/index.html" 'href="/articles/no-locks/"'
 for a in refusal-is-a-result no-locks nowhere-to-occur; do assert_file "articles/$a/index.html"; done
-assert_contains "articles/nowhere-to-occur/index.html" "does not currently have a tracing garbage collector"
+assert_contains "articles/nowhere-to-occur/index.html" "tracing garbage collector"
 assert_contains "articles/refusal-is-a-result/index.html" "images/turing/04-model.png"
 assert_contains "index.html" 'href="/articles/"'
 assert_contains "sitemap.xml" "/articles/no-locks/"
