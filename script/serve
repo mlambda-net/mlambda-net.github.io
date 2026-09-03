@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Build, then serve _site on http://localhost:4000 (no live reload).
+set -euo pipefail
+cd "$(dirname "$0")/.."
+./script/check
+"$(command -v python3 || command -v python)" -m http.server 4000 -d _site

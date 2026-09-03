@@ -1,0 +1,41 @@
+title: MLambda
+tagline: Software that is verified before it is built.
+description: >-
+  MLambda builds the stack for correct-by-construction software: the Genesis compiler
+  workbench, the Aleph language, the MLambda.Actors runtime, an actor-native database,
+  a reactive UI framework, a research microkernel, neuro-symbolic AI — and an agentic
+  factory that turns a description into a model-checked, tested, deployable system.
+url: "https://www.mlambda.net"
+baseurl: ""
+lang: en
+
+permalink: pretty
+
+collections:
+  products:
+    output: true
+    permalink: /products/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: products
+    values:
+      layout: product
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - script
+  - docs
+  - vendor
