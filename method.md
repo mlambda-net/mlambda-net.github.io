@@ -57,5 +57,7 @@ The method borrows TOGAF for what exists, Gilb's Planguage for what must hold, a
 domain-driven design for what to build.</p>
 
 <p>The full method is documented in the twelve-chapter method book on
-<a href="https://genesis.mlambda.net">genesis.mlambda.net</a>.</p>
+<a href="https://genesis.mlambda.net">genesis.mlambda.net</a>. For the reasoning behind the
+neuro-symbolic layer, read <a href="{{ '/articles/the-llm-never-answers/' | relative_url }}">The
+LLM never answers. Only proofs do.</a></p>
 </div>

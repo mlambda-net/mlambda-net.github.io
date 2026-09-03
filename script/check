@@ -213,6 +213,14 @@ assert_contains "index.html" 'type="image/svg+xml" href="/images/favicon-32x32.s
 assert_contains "about/index.html" 'class="page-head"'
 assert_contains "index.html" "site-footer__grid"
 
+assert_file "articles/the-llm-never-answers/index.html"
+assert_contains "articles/the-llm-never-answers/index.html" "Only proofs do"
+assert_contains "articles/the-llm-never-answers/index.html" "images/articles/ns-02-hilbert.png"
+assert_contains "articles/the-llm-never-answers/index.html" "Hilbert is research"
+assert_file "images/articles/ns-01-gathers-decides.png"
+assert_contains "sitemap.xml" "/articles/the-llm-never-answers/"
+assert_contains "index.html" "the-llm-never-answers"
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi
