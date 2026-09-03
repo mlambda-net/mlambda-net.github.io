@@ -204,3 +204,21 @@ What it found on one generated system: 114 tests, 35 failures — all 35 explain
 The model gathers. The proofs decide. https://www.mlambda.net/articles/the-intelligence-llms-are-missing/
 
 #FormalMethods #ModelChecking #ProgramAnalysis #AI #SoftwareQuality #TLAplus
+
+---
+
+## Day 15 — Context that has been proved (RAG vs CAG)
+
+RAG hands a model passages that look relevant. Nothing checks they're true, consistent, or complete — and the answer is checked by another model, if at all.
+
+At MLambda we do context-augmented generation with a precise meaning of "context": a knowledge base every statement of which passed a verification gate before it was admitted — well-formed, then sortal, then consistent — organised as an ontology with a written formal semantics.
+
+Two networks: the ontological (kinds, duties) and the semantic (things). Rules and facts in Shin, a sortal-modal logic layer: epistemic (S5), deontic (KD), temporal (LTL), alethic — so "verifying semantic, deontic and epistemic information" is three rule families with axioms, not a slogan.
+
+Seven expert layers — Gilb, Project, ECommerce, UX, Design, Solution, Analysis — 378 admitted statements, each expert's ontology assembled as the context, the model asked in its presence, the answer analysed after. Every answer comes back Known, Believed (with a confidence), Unknown, or Contradicted — with a proof or citations.
+
+That's the meta-cognition an LLM can't do: knowing what it knows, how well, and from whom, as a data structure. And Scryer, our statistical substrate, feeds it modal variables the logic can classify.
+
+https://www.mlambda.net/articles/context-that-has-been-proved/
+
+#AI #RAG #KnowledgeGraphs #NeuroSymbolicAI #ExpertSystems #LLM

@@ -247,6 +247,14 @@ assert_contains "articles/the-intelligence-llms-are-missing/index.html" "queryab
 assert_file "images/articles/ns-10-verification.png"
 assert_contains "articles/index.html" "The intelligence LLMs are missing"
 
+assert_file "articles/context-that-has-been-proved/index.html"
+assert_contains "articles/context-that-has-been-proved/index.html" "four-valued verdict"
+assert_contains "articles/context-that-has-been-proved/index.html" "378 admitted statements"
+assert_contains "articles/context-that-has-been-proved/index.html" "sense disambiguation is not"
+assert_contains "articles/context-that-has-been-proved/index.html" "symbolic data analysis"
+assert_file "images/articles/ns-11-cag.png"
+assert_contains "articles/index.html" "Context that has been proved"
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi
