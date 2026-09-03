@@ -202,6 +202,12 @@ assert_contains "products/data/index.html" "Request early access"
 assert_contains "services/index.html" 'id="demonstration"'
 assert_contains "assets/css/main.css" "Manrope"
 
+assert_contains "index.html" "The mission"
+assert_contains "index.html" "TOGAF"
+assert_contains "index.html" "reactive domain-driven design"
+assert_contains "about/index.html" "Where it came from"
+assert_contains "products/turing/index.html" "Where it came from"
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi

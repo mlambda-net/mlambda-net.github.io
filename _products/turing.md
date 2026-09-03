@@ -37,6 +37,17 @@ benchmarking, cleanup, cluster deployment, integration demo, application archite
 topology deployment, diagnostics, release — that take a business description to a deployed
 actor system on the MLambda runtime.
 
+## Where it came from
+
+Turing is the realisation of a mission its founder carried for years before MLambda
+existed: a system that understands architecture the way <strong>TOGAF</strong> describes it,
+expresses each domain as a <strong>domain-specific language</strong>, and runs it on an actor
+framework built for <strong>reactive domain-driven design</strong>. The rational tools that make
+it up divide the work cleanly — language models gather and validate requirements in a
+controlled language; symbolic artificial intelligence infers the logic, the views, the tests
+and the verification from what was admitted. Genesis runs TOGAF's cycle; Guimel is the domain
+language; MLambda.Actors is the runtime the domains run on.
+
 ## The story
 
 What follows is one small system — a to-do list — going through Turing, as the workbench

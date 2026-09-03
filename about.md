@@ -12,6 +12,19 @@ software architect with eighteen years in distributed systems and a second degre
 philosophy of formal science. The company exists because of one conviction: most software is
 tested after the fact and trusted on faith, and it does not have to be.</p>
 
+<h2>Where it came from</h2>
+
+<p>The mission predates the company. As an enterprise architect applying TOGAF across
+consulting and product work, the founder kept meeting the same gap: the architecture was
+sound, and the software drifted from it anyway, because nothing but people connected the two.
+The answer he set out to build was a system that <strong>understands architecture as TOGAF
+describes it</strong>, expresses every domain as a <strong>domain-specific language</strong>, and
+runs it on an <strong>actor framework built for reactive domain-driven design</strong>. MLambda was
+founded in 2019 to build exactly that — first the actor runtime, then the compiler workbench
+the languages needed, then the languages, and now Turing: rational tools that use language
+models to gather and validate requirements and symbolic artificial intelligence to derive the
+logic, the views, the tests and the verification from them.</p>
+
 <h2>What we build</h2>
 
 <p>A stack whose parts share a premise. <a href="{{ '/products/genesis/' | relative_url }}">Genesis</a>

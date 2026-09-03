@@ -260,3 +260,16 @@
 .art .tick { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .card__art { margin: -0.3rem -0.4rem 0.6rem; border-radius: 4px; background: var(--surface); }
 .art--hero { border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); padding: 0.6rem; }
+
+// Mission -------------------------------------------------------------------
+
+.mission { padding: 2.5rem 0 0; }
+.mission__body { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; }
+.mission__body .prose p { font-size: 1.05rem; }
+.mission__sign { font-family: var(--display); font-weight: 700; color: var(--ink); }
+.mission__sign a { text-decoration: none; }
+.mission__map { list-style: none; margin: 0.4rem 0 0; padding: 0; border-left: 2px solid var(--rule); }
+.mission__map li { padding: 0.7rem 0 0.7rem 1.1rem; }
+.mission__map strong { display: block; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.02em; color: var(--accent); margin-bottom: 0.15rem; }
+.mission__map span { color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 900px) { .mission__body { grid-template-columns: 1fr; gap: 1.5rem; } }

@@ -95,6 +95,41 @@ description: MLambda builds the stack for software that is verified before it is
   </ul>
 </section>
 
+<section class="section mission">
+  <span class="eyebrow">The mission</span>
+  <h2>A system that understands architecture — and builds from it</h2>
+  <div class="mission__body">
+    <div class="prose">
+      <p>The idea is older than the company. Years before MLambda existed, its founder was an
+      enterprise architect applying <strong>TOGAF</strong> by hand — business, application, data,
+      technology — and watching the same thing happen on every project: the architecture was
+      right, and the software still drifted from it, because nothing connected the two except
+      people and time.</p>
+      <p>The mission became a single sentence: <strong>build a system that understands
+      architecture the way TOGAF describes it, expresses each domain as a domain-specific
+      language, and runs it on an actor framework built for reactive domain-driven design</strong> —
+      so that the model is not documentation about the software, but the thing the software is
+      generated and verified from.</p>
+      <p>That is what Turing is. A set of <em>rational tools</em>: domain-specific languages that call
+      on language models to gather and validate requirements, then hand them to <strong>symbolic
+      artificial intelligence</strong> — an inference engine, a proof kernel, a model checker — to
+      derive the logic, the views, the tests and the verification. The LLM gathers; the symbolic
+      layer decides. Genesis is the workbench the languages are built in; MLambda.Actors is the
+      runtime the domains run on; Aleph is the language chosen so the generated system stays
+      correct after it exists.</p>
+      <p class="mission__sign">This is the application I dreamed of building for many years. I am building it now.
+      <br><a href="{{ site.data.company.founder.url }}">— {{ site.data.company.founder.name }}, founder</a></p>
+    </div>
+    <ul class="mission__map">
+      <li><strong>TOGAF</strong><span>the architecture cycle Genesis runs — vision, business, data, application, technology, governance</span></li>
+      <li><strong>Domain-specific languages</strong><span>Guimel for the domain, Samek for the specification, Aleph for the program</span></li>
+      <li><strong>Actor framework</strong><span>MLambda.Actors — the runtime for reactive domain-driven design</span></li>
+      <li><strong>LLM</strong><span>gathers and validates requirements in controlled language</span></li>
+      <li><strong>Symbolic AI</strong><span>Shin inference, a proof kernel and TLA+ derive logic, views, tests and verification</span></li>
+    </ul>
+  </div>
+</section>
+
 <section class="section">
   <h2>The stack</h2>
   <div class="diagram">{% include stack-diagram.svg %}</div>
