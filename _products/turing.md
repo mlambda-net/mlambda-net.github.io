@@ -1,4 +1,5 @@
 ---
+slug: turing
 title: MLambda Turing
 tagline: The architecture platform. Describe a system in plain language; get back one that was verified before it was built.
 tier: commercial

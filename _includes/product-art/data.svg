@@ -1,0 +1,9 @@
+<svg viewBox="0 0 320 180" role="img" aria-label="MLambda.Data: a consistent hash ring of nodes over a log-structured storage engine" xmlns="http://www.w3.org/2000/svg">
+  <circle class="ring" cx="90" cy="90" r="54"/>
+  <circle class="node" cx="90" cy="36" r="7"/><circle class="node" cx="137" cy="63" r="7"/><circle class="node" cx="137" cy="117" r="7"/><circle class="node" cx="90" cy="144" r="7"/><circle class="node" cx="43" cy="117" r="7"/><circle class="node" cx="43" cy="63" r="7"/>
+  <text class="sub" x="90" y="86" text-anchor="middle">hash ring</text><text class="sub" x="90" y="100" text-anchor="middle">CRDT gossip</text>
+  <rect class="box" x="180" y="30" width="120" height="26" rx="4"/><text class="sub" x="240" y="47" text-anchor="middle">WAL · CRC32</text>
+  <rect class="box" x="180" y="64" width="120" height="26" rx="4"/><text class="sub" x="240" y="81" text-anchor="middle">memtable</text>
+  <rect class="box" x="180" y="98" width="120" height="26" rx="4"/><text class="sub" x="240" y="115" text-anchor="middle">SSTables · Bloom · B-tree</text>
+  <rect class="box box--accent" x="180" y="132" width="120" height="26" rx="4"/><text class="sub" x="240" y="149" text-anchor="middle">consistency: TLA+ checked</text>
+</svg>

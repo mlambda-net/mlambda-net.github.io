@@ -1,0 +1,11 @@
+<svg viewBox="0 0 320 180" role="img" aria-label="Hilbert: five logic levels connected by fast weights, with a strange loop feeding the top level's error back to the bottom" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="pa-h" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+  <rect class="box box--accent" x="70" y="14" width="150" height="24" rx="4"/><text class="sub" x="145" y="30" text-anchor="middle">N5 · sortal</text>
+  <rect class="box" x="70" y="46" width="150" height="24" rx="4"/><text class="sub" x="145" y="62" text-anchor="middle">N4 · temporal (LTL)</text>
+  <rect class="box" x="70" y="78" width="150" height="24" rx="4"/><text class="sub" x="145" y="94" text-anchor="middle">N3 · modal</text>
+  <rect class="box" x="70" y="110" width="150" height="24" rx="4"/><text class="sub" x="145" y="126" text-anchor="middle">N2 · relational (GAT)</text>
+  <rect class="box" x="70" y="142" width="150" height="24" rx="4"/><text class="sub" x="145" y="158" text-anchor="middle">N1 · first-order</text>
+  <path class="arrow" d="M220 26H250V154H228" marker-end="url(#pa-h)"/>
+  <text class="sub" x="262" y="94" text-anchor="start">strange</text><text class="sub" x="262" y="108" text-anchor="start">loop</text>
+  <text class="sub" x="36" y="94" text-anchor="middle">fast</text><text class="sub" x="36" y="108" text-anchor="middle">weights</text>
+</svg>

@@ -1,19 +1,23 @@
 // Dark-first. Only the tokens that change are restated for light.
 :root {
-  --ground: #0b0e12;
-  --surface: #141920;
-  --ink: #e6e8eb;
-  --muted: #9aa3ad;
-  --rule: #242b34;
-  --accent: #5cc8d6;
-  --warm: #e0a458;
-  --research: #b48ead;
+  --ground: #0a0f1e;
+  --surface: #111a2e;
+  --surface-2: #16213a;
+  --ink: #eef2ff;
+  --muted: #94a3b8;
+  --rule: #1f2a44;
+  --accent: #7dd3fc;
+  --accent-2: #a78bfa;
+  --warm: #fbbf24;
+  --research: #f0abfc;
+  --glow: rgba(125, 211, 252, 0.16);
+  --glow-2: rgba(167, 139, 250, 0.14);
 
-  --display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --body: "IBM Plex Sans", "Segoe UI", Roboto, sans-serif;
+  --display: "Manrope", "Segoe UI", Helvetica, Arial, sans-serif;
+  --body: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --shell: 72rem;
+  --shell: 74rem;
   --measure: 44rem;
 
   color-scheme: dark light;
@@ -21,13 +25,17 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --ground: #f6f7f8;
+    --ground: #f8fafc;
     --surface: #ffffff;
-    --ink: #151a1f;
-    --muted: #5c6670;
-    --rule: #d9dee4;
-    --accent: #0f7f8c;
-    --warm: #9a5f12;
-    --research: #6b4d7a;
+    --surface-2: #f1f5f9;
+    --ink: #0f172a;
+    --muted: #475569;
+    --rule: #e2e8f0;
+    --accent: #0369a1;
+    --accent-2: #6d28d9;
+    --warm: #b45309;
+    --research: #a21caf;
+    --glow: rgba(3, 105, 161, 0.10);
+    --glow-2: rgba(109, 40, 217, 0.08);
   }
 }

@@ -1,4 +1,5 @@
 ---
+slug: os
 title: MLambda.OS
 tagline: A Minix 3-inspired microkernel for x86-64, specified before it is implemented.
 tier: commercial

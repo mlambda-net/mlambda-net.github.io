@@ -1,16 +1,73 @@
 // Hero ----------------------------------------------------------------------
 
-.hero { padding: 1rem 0 2rem; }
-.hero h1 { font-size: 2.8rem; max-width: 36rem; }
-.hero__lede { font-size: 1.15rem; max-width: var(--measure); }
+.hero {
+  position: relative;
+  padding: 1.5rem 0 2.5rem;
+}
 
-@media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -6rem -10vw auto -10vw;
+  height: 34rem;
+  background:
+    radial-gradient(38rem 22rem at 18% 30%, var(--glow), transparent 70%),
+    radial-gradient(30rem 20rem at 82% 20%, var(--glow-2), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 3.1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  max-width: 34rem;
+  background: linear-gradient(92deg, var(--ink) 0%, var(--accent) 55%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__lede { font-size: 1.15rem; max-width: var(--measure); color: var(--muted); }
+.hero__lede strong { color: var(--ink); font-weight: 600; }
+
+.hero--split {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; }
+
+.shot {
+  margin: 0;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--glow);
+}
+.shot img { display: block; width: 100%; height: auto; }
+.shot figcaption { padding: 0.55rem 0.9rem; border-top: 1px solid var(--rule); color: var(--muted); }
+
+@media (max-width: 900px) {
+  .hero--split { grid-template-columns: 1fr; gap: 2rem; }
+  .hero h1 { font-size: 2.2rem; }
+}
+
+// Section headings ----------------------------------------------------------
+
+.section { margin-top: 4.5rem; }
+.section > h2 { font-size: 1.8rem; letter-spacing: -0.02em; margin: 0 0 0.4em; }
+.section__lede { color: var(--muted); max-width: var(--measure); margin: 0 0 1.6rem; }
+.eyebrow { display: block; color: var(--accent); margin-bottom: 0.6rem; }
 
 // Cards ---------------------------------------------------------------------
 
 .grid-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: 1.2rem;
   list-style: none;
   margin: 1.5rem 0 0;
@@ -18,16 +75,31 @@
 }
 
 .card {
+  position: relative;
   display: block;
   background: var(--surface);
   border: 1px solid var(--rule);
+  border-radius: 6px;
   padding: 1.3rem 1.4rem 1.4rem;
   color: var(--ink);
   text-decoration: none;
+  transition: transform 160ms ease, border-color 160ms ease;
 }
 
-.card:hover { border-color: var(--accent); text-decoration: none; }
-.card__title { font-family: var(--display); font-size: 1.15rem; font-weight: 600; margin: 0.5rem 0 0.3rem; }
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.card:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.card:hover::before { opacity: 1; }
+.card__title { font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin: 0.6rem 0 0.3rem; }
 .card__tagline { margin: 0 0 0.8rem; color: var(--muted); }
 .card__meta { color: var(--muted); display: block; }
 
@@ -37,11 +109,80 @@
   display: inline-block;
   padding: 0.15rem 0.55rem;
   border: 1px solid currentColor;
-  border-radius: 2px;
+  border-radius: 999px;
 }
 .tier--open { color: var(--accent); }
 .tier--commercial { color: var(--warm); }
 .tier--research { color: var(--research); }
+
+// Pillars (the verifiable model) -------------------------------------------
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.2rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.pillar {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1.3rem 1.4rem;
+}
+
+.pillar__label { display: block; color: var(--accent); margin-bottom: 0.5rem; }
+.pillar h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.pillar p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.pillar p strong { color: var(--ink); }
+
+// Thesis blocks -------------------------------------------------------------
+
+.thesis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1.6rem 2.4rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.thesis li { border-top: 2px solid var(--rule); padding-top: 1rem; }
+.thesis h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+.thesis p { margin: 0; color: var(--muted); }
+
+// Proof strip ---------------------------------------------------------------
+
+.proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2.8rem;
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 1.4rem 0 0;
+  border-top: 1px solid var(--rule);
+}
+
+.proof li { margin-bottom: 1rem; }
+.proof__num { display: block; font-family: var(--display); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; color: var(--accent); }
+.proof__label { display: block; color: var(--muted); font-size: 0.9rem; }
+
+// Verticals and roadmap -----------------------------------------------------
+
+.verticals { list-style: none; margin: 1.2rem 0 0; padding: 0; display: grid; gap: 0.9rem; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); }
+.verticals li { background: var(--surface-2); border-radius: 6px; padding: 1rem 1.2rem; }
+.verticals strong { display: block; font-family: var(--display); margin-bottom: 0.2rem; }
+.verticals span { color: var(--muted); font-size: 0.95rem; }
+
+.roadmap { list-style: none; margin: 1.2rem 0 0; padding: 0; }
+.roadmap li { display: grid; grid-template-columns: 10rem 1fr; gap: 1.5rem; padding: 0.9rem 0; border-top: 1px solid var(--rule); }
+.roadmap li:last-child { border-bottom: 1px solid var(--rule); }
+.roadmap strong { font-family: var(--display); }
+.roadmap span { color: var(--muted); }
+
+@media (max-width: 640px) { .roadmap li { grid-template-columns: 1fr; gap: 0.3rem; } }
 
 // Product rail --------------------------------------------------------------
 
@@ -51,20 +192,30 @@
 .rail-block li { margin-bottom: 0.35rem; }
 
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: 0; padding: 0; }
-.tag { border: 1px solid var(--rule); color: var(--muted); padding: 0.15rem 0.5rem; border-radius: 2px; }
+.tag { border: 1px solid var(--rule); color: var(--muted); padding: 0.15rem 0.5rem; border-radius: 999px; }
 
 // Buttons -------------------------------------------------------------------
 
 .btn {
   display: inline-block;
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   border: 1px solid var(--accent);
+  border-radius: 4px;
   color: var(--accent);
-  padding: 0.55rem 1rem;
+  padding: 0.6rem 1.05rem;
   text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
 }
-.btn:hover { background: var(--accent); color: var(--ground); }
+.btn:hover { background: var(--accent); color: var(--ground); text-decoration: none; }
+
+.btn--primary {
+  background: linear-gradient(92deg, var(--accent), var(--accent-2));
+  border-color: transparent;
+  color: var(--ground);
+  font-weight: 500;
+}
+.btn--primary:hover { filter: brightness(1.08); color: var(--ground); }
 
 // Diagrams ------------------------------------------------------------------
 
@@ -72,7 +223,7 @@
 .diagram svg { width: 100%; height: auto; display: block; }
 .diagram .box { fill: var(--surface); stroke: var(--rule); }
 .diagram .box--accent { stroke: var(--accent); }
-.diagram .label { font-family: var(--display); font-size: 15px; font-weight: 600; fill: var(--ink); }
+.diagram .label { font-family: var(--display); font-size: 15px; font-weight: 700; fill: var(--ink); }
 .diagram .sub { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
 .diagram .arrow { stroke: var(--muted); fill: none; }
 .diagram .arrowhead { fill: var(--muted); }
@@ -80,13 +231,32 @@
 // Story figures -------------------------------------------------------------
 
 .story-figure { margin: 2rem 0 1.2rem; }
-.story-figure img { display: block; border: 1px solid var(--rule); background: var(--surface); }
+.story-figure img { display: block; border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); }
+.story-figure figcaption { margin-top: 0.5rem; }
 
 // Services ------------------------------------------------------------------
 
-.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1.2rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
-.service { background: var(--surface); border: 1px solid var(--rule); padding: 1.4rem; }
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1.2rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.service { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 1.4rem; }
+.service--primary { border-color: var(--accent); }
 .service__name { font-family: var(--display); font-size: 1.15rem; margin: 0 0 0.5rem; }
 .service ul { padding-left: 1.1rem; margin: 0.6rem 0 1rem; }
 
-.story-figure figcaption { margin-top: 0.5rem; }
+// Product art (inline SVG illustrations derived from each architecture) ----
+
+.art svg { width: 100%; height: auto; display: block; }
+.art .box { fill: var(--surface-2); stroke: var(--rule); stroke-width: 1; }
+.art .box--accent { stroke: var(--accent); }
+.art .label { font-family: var(--display); font-size: 12px; font-weight: 700; fill: var(--ink); }
+.art .sub { font-family: var(--mono); font-size: 8.5px; fill: var(--muted); }
+.art .glyph { font-family: var(--display); font-size: 56px; font-weight: 800; fill: var(--accent); }
+.art .arrow { stroke: var(--muted); fill: none; stroke-width: 1.2; }
+.art .arrowhead { fill: var(--muted); }
+.art .msg { stroke: var(--accent); stroke-width: 2; stroke-dasharray: 3 2; }
+.art .ring { fill: none; stroke: var(--rule); stroke-width: 1.2; }
+.art .ring--accent { stroke: var(--accent); fill: var(--surface-2); }
+.art .node { fill: var(--accent); }
+.art .dot { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.art .tick { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.card__art { margin: -0.3rem -0.4rem 0.6rem; border-radius: 4px; background: var(--surface); }
+.art--hero { border: 1px solid var(--rule); border-radius: 6px; background: var(--surface); padding: 0.6rem; }

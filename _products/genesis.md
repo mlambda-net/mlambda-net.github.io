@@ -1,4 +1,5 @@
 ---
+slug: genesis
 title: Genesis
 tagline: A compiler workbench for building languages — and for verifying what they describe before it exists.
 tier: open

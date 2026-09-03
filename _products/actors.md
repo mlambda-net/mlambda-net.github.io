@@ -1,4 +1,5 @@
 ---
+slug: actors
 title: MLambda.Actors
 tagline: A reactive actor runtime for .NET with supervision, clustering, gossip membership and mTLS.
 tier: open

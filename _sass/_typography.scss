@@ -1,13 +1,13 @@
 h1, h2, h3 {
   font-family: var(--display);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.15;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   margin: 0 0 0.6em;
 }
 
-h1 { font-size: 2.4rem; }
-h2 { font-size: 1.5rem; margin-top: 2.4em; }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.55rem; margin-top: 2.4em; }
 h3 { font-size: 1.1rem; margin-top: 1.6em; }
 
 p { margin: 0 0 1.2em; }
@@ -20,6 +20,8 @@ p { margin: 0 0 1.2em; }
 .tier,
 .tag,
 .rail-block__label,
+.pillar__label,
+.eyebrow,
 .site-nav a,
 .site-footer {
   font-family: var(--mono);

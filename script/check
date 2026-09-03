@@ -118,8 +118,8 @@ assert_absent_regex_everywhere '\$[0-9]'
 assert_absent_everywhere "<script src="
 
 assert_file "assets/css/main.css"
-assert_contains "assets/css/main.css" "--ground: #0b0e12"
-assert_contains "assets/css/main.css" "--accent: #5cc8d6"
+assert_contains "assets/css/main.css" "--ground: #0a0f1e"
+assert_contains "assets/css/main.css" "--accent: #7dd3fc"
 assert_contains "assets/css/main.css" "prefers-color-scheme: light"
 assert_contains "assets/css/main.css" "JetBrains Mono"
 
@@ -187,6 +187,20 @@ assert_file "sitemap.xml"
 for r in products method services about products/turing products/genesis products/aleph products/actors products/data products/ui products/os products/hilbert; do assert_contains "sitemap.xml" "/$r/"; done
 assert_contains "index.html" "og:title"
 assert_contains "products/genesis/index.html" "og:description"
+
+assert_contains "index.html" "Why it matters"
+assert_contains "index.html" "A verifiable model"
+assert_contains "index.html" "Software as mathematics"
+assert_contains "index.html" "Built for"
+assert_contains "index.html" "What's next"
+assert_contains "index.html" "Request a demonstration"
+assert_contains "index.html" "images/turing/04-model.png"
+assert_contains "index.html" 'class="card__art art"'
+assert_contains "products/aleph/index.html" 'class="art art--hero"'
+assert_contains "products/turing/index.html" "Request a demonstration"
+assert_contains "products/data/index.html" "Request early access"
+assert_contains "services/index.html" 'id="demonstration"'
+assert_contains "assets/css/main.css" "Manrope"
 
 if [ "${1:-}" = "--links" ]; then
   check_links

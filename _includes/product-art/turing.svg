@@ -1,0 +1,12 @@
+<svg viewBox="0 0 320 180" role="img" aria-label="Turing: describe, model, verify, build" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="pa-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+  <rect class="box" x="14" y="66" width="62" height="44" rx="4"/><text class="label" x="45" y="86" text-anchor="middle">Describe</text><text class="sub" x="45" y="100" text-anchor="middle">prose</text>
+  <rect class="box" x="90" y="66" width="62" height="44" rx="4"/><text class="label" x="121" y="86" text-anchor="middle">Model</text><text class="sub" x="121" y="100" text-anchor="middle">Guimel</text>
+  <rect class="box box--accent" x="166" y="66" width="62" height="44" rx="4"/><text class="label" x="197" y="86" text-anchor="middle">Verify</text><text class="sub" x="197" y="100" text-anchor="middle">TLA+</text>
+  <rect class="box" x="242" y="66" width="62" height="44" rx="4"/><text class="label" x="273" y="86" text-anchor="middle">Build</text><text class="sub" x="273" y="100" text-anchor="middle">actors · tests</text>
+  <path class="arrow" d="M76 88H90" marker-end="url(#pa-t)"/><path class="arrow" d="M152 88H166" marker-end="url(#pa-t)"/><path class="arrow" d="M228 88H242" marker-end="url(#pa-t)"/>
+  <path class="arrow" d="M197 66V40H121V66" marker-end="url(#pa-t)"/>
+  <text class="sub" x="159" y="34" text-anchor="middle">refused → back to the model</text>
+  <circle class="dot" cx="197" cy="132" r="9"/><path class="tick" d="M192 132l4 4 7-8"/>
+  <text class="sub" x="197" y="158" text-anchor="middle">admitted only as a proof</text>
+</svg>

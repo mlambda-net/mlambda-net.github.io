@@ -1,6 +1,8 @@
 {%- assign p = include.product -%}
+{%- capture art %}product-art/{{ p.slug }}.svg{% endcapture -%}
 <li>
   <a class="card" href="{{ p.url | relative_url }}">
+    <div class="card__art art">{% include {{ art }} %}</div>
     {% include tier.html tier=p.tier %}
     <h3 class="card__title">{{ p.title }}</h3>
     <p class="card__tagline">{{ p.tagline }}</p>

@@ -1,16 +1,29 @@
 ---
 layout: default
 ---
+{%- capture art %}product-art/{{ page.slug }}.svg{% endcapture -%}
 <div class="shell">
-  <div class="hero">
-    {% include tier.html tier=page.tier %}
-    <h1>{{ page.title }}</h1>
-    <p class="hero__lede">{{ page.tagline }}</p>
-    <p class="mono muted">Status: {{ page.status }}</p>
+  <div class="hero hero--split">
+    <div>
+      {% include tier.html tier=page.tier %}
+      <h1>{{ page.title }}</h1>
+      <p class="hero__lede">{{ page.tagline }}</p>
+      <p class="mono muted">Status: {{ page.status }}</p>
+    </div>
+    <div class="art art--hero">{% include {{ art }} %}</div>
   </div>
 
   <div class="product">
     <aside class="product__rail">
+      <div class="rail-block">
+        {%- if page.url == "/products/turing/" %}
+        <a class="btn btn--primary" href="mailto:{{ site.data.company.email }}?subject=Turing%20demonstration">Request a demonstration</a>
+        {%- elsif page.tier == "commercial" %}
+        <a class="btn btn--primary" href="mailto:{{ site.data.company.email }}?subject={{ page.title | uri_escape }}%20early%20access">Request early access</a>
+        {%- elsif page.tier == "open" %}
+        <a class="btn btn--primary" href="mailto:{{ site.data.company.email }}?subject={{ page.title | uri_escape }}%20support">Commercial support</a>
+        {%- endif %}
+      </div>
       <div class="rail-block">
         <span class="rail-block__label">Where to verify</span>
         <ul>

@@ -1,0 +1,12 @@
+<svg viewBox="0 0 320 180" role="img" aria-label="Aleph: pure source is type-checked, compiled through LLVM to native code or WebAssembly, and reaches C directly" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="pa-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+  <text class="glyph" x="52" y="98" text-anchor="middle">ℵ</text>
+  <text class="sub" x="52" y="126" text-anchor="middle">pure · immutable</text>
+  <rect class="box box--accent" x="104" y="64" width="72" height="48" rx="4"/><text class="label" x="140" y="84" text-anchor="middle">Types</text><text class="sub" x="140" y="100" text-anchor="middle">Hindley–Milner</text>
+  <rect class="box" x="196" y="64" width="52" height="48" rx="4"/><text class="label" x="222" y="92" text-anchor="middle">LLVM</text>
+  <path class="arrow" d="M84 88H104" marker-end="url(#pa-a)"/><path class="arrow" d="M176 88H196" marker-end="url(#pa-a)"/>
+  <rect class="box" x="266" y="44" width="42" height="26" rx="4"/><text class="sub" x="287" y="61" text-anchor="middle">native</text>
+  <rect class="box" x="266" y="110" width="42" height="26" rx="4"/><text class="sub" x="287" y="127" text-anchor="middle">wasm</text>
+  <path class="arrow" d="M248 82C258 82 258 57 266 57" marker-end="url(#pa-a)"/><path class="arrow" d="M248 94C258 94 258 123 266 123" marker-end="url(#pa-a)"/>
+  <text class="sub" x="160" y="150" text-anchor="middle">import "c" · "asm" · "llvm" · "wasm"</text>
+</svg>

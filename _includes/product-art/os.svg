@@ -1,0 +1,10 @@
+<svg viewBox="0 0 320 180" role="img" aria-label="MLambda.OS: a microkernel at ring 0 with servers and processes in outer rings, separated by the syscall boundary" xmlns="http://www.w3.org/2000/svg">
+  <circle class="ring" cx="110" cy="90" r="78"/><circle class="ring" cx="110" cy="90" r="56"/><circle class="ring ring--accent" cx="110" cy="90" r="30"/>
+  <text class="label" x="110" y="94" text-anchor="middle">kernel</text>
+  <text class="sub" x="110" y="52" text-anchor="middle">servers · IPC</text>
+  <text class="sub" x="110" y="28" text-anchor="middle">processes</text>
+  <text class="sub" x="230" y="70" text-anchor="start">ring 0 — microkernel</text>
+  <text class="sub" x="230" y="90" text-anchor="start">syscall boundary</text>
+  <text class="sub" x="230" y="110" text-anchor="start">paging · GDT · IDT</text>
+  <text class="sub" x="230" y="130" text-anchor="start">specified first</text>
+</svg>

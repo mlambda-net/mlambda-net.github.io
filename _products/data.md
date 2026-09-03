@@ -1,4 +1,5 @@
 ---
+slug: data
 title: MLambda.Data
 tagline: A distributed database in which every component is an actor — and the consistency model is a checked TLA+ specification.
 tier: commercial

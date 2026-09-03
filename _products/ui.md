@@ -1,4 +1,5 @@
 ---
+slug: ui
 title: MLambda.UI
 tagline: A reactive MVVM framework that never calls a render method — one view, painted by ImGui, Blazor or Avalonia.
 tier: commercial

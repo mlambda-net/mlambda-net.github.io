@@ -1,0 +1,11 @@
+<svg viewBox="0 0 320 180" role="img" aria-label="Genesis: grammar and schema become a parser, a syntax tree and generated targets" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="pa-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+  <rect class="box" x="14" y="36" width="70" height="36" rx="4"/><text class="label" x="49" y="58" text-anchor="middle">EBNF</text>
+  <rect class="box" x="14" y="108" width="70" height="36" rx="4"/><text class="label" x="49" y="130" text-anchor="middle">ASDL</text>
+  <rect class="box box--accent" x="118" y="60" width="84" height="60" rx="4"/><text class="label" x="160" y="84" text-anchor="middle">Parser</text><text class="sub" x="160" y="100" text-anchor="middle">combinators · AST</text>
+  <path class="arrow" d="M84 54C100 54 100 80 118 80" marker-end="url(#pa-g)"/><path class="arrow" d="M84 126C100 126 100 100 118 100" marker-end="url(#pa-g)"/>
+  <rect class="box" x="236" y="28" width="70" height="28" rx="4"/><text class="sub" x="271" y="46" text-anchor="middle">C# · SQL</text>
+  <rect class="box" x="236" y="76" width="70" height="28" rx="4"/><text class="sub" x="271" y="94" text-anchor="middle">LLVM IR</text>
+  <rect class="box" x="236" y="124" width="70" height="28" rx="4"/><text class="sub" x="271" y="142" text-anchor="middle">TLA+ · algebra</text>
+  <path class="arrow" d="M202 78C220 78 220 42 236 42" marker-end="url(#pa-g)"/><path class="arrow" d="M202 90H236" marker-end="url(#pa-g)"/><path class="arrow" d="M202 102C220 102 220 138 236 138" marker-end="url(#pa-g)"/>
+</svg>

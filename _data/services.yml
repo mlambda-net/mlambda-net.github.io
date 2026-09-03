@@ -1,4 +1,17 @@
 engagements:
+  - id: demonstration
+    name: Demonstration
+    primary: true
+    summary: >-
+      See Turing run on a domain you describe — from a paragraph of requirements to a
+      checked model and generated source, live.
+    includes:
+      - You bring a business description; we take it through backlog, requirements, model and verification
+      - The refusals matter as much as the results — you will see what the model will not accept and why
+      - Generated source on the MLambda runtime, with its specifications and deployment beside it
+      - A written follow-up on what an engagement on your system would involve
+    start: Write with two or three sentences about the system and the invariant that worries you most.
+
   - id: consulting
     name: Consulting
     summary: >-

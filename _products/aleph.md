@@ -1,4 +1,5 @@
 ---
+slug: aleph
 title: Aleph
 tagline: A functional language that reaches the machine directly — C, assembly, LLVM and WebAssembly through a native FFI.
 tier: commercial

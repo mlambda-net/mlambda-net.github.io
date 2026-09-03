@@ -1,4 +1,5 @@
 ---
+slug: hilbert
 title: Hilbert
 tagline: A neuro-symbolic transformer that reasons across five systems of logic and learns from each input without retraining.
 tier: research
