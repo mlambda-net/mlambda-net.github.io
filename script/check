@@ -274,6 +274,13 @@ assert_contains "articles/system-two/index.html" "kambhampati24a"
 assert_contains "articles/system-two/index.html" "language model gathers; the proofs decide"
 assert_contains "articles/system-two/index.html" "consistent falsehood that no axiom contradicts will pass"
 assert_file "images/articles/ns-14-system-two.png"
+assert_file "articles/the-future-i-see/index.html"
+assert_contains "articles/the-future-i-see/index.html" "negative half: scaling a System 1 does"
+assert_contains "articles/index.html" "The future I see"
+assert_contains "articles/the-future-i-see/index.html" "I would rather be wrong with a proof than right by accident"
+assert_contains "articles/the-future-i-see/index.html" "arxiv.org/abs/2509.04664"
+assert_absent "articles/the-future-i-see/index.html" "queue.acm.org"
+assert_file "images/articles/ns-15-the-future-i-see.png"
 assert_contains "articles/index.html" "System 2 for machines"
 
 if [ "${1:-}" = "--links" ]; then

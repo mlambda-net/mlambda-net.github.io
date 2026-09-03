@@ -270,3 +270,17 @@ The question is who builds a System 2 general enough to sit under a business. Th
 Every model on the market is a System 1. The System 2 is the scarce part, and it's engineered, not trained. https://www.mlambda.net/articles/system-two/
 
 #NeuroSymbolicAI #AI #LLM #FormalMethods #ExpertSystems #Investing
+
+## Day 19 — The future I see
+
+I fell in love with the actor model in Hewitt's 1973 paper: a model of computation that owes nothing to von Neumann, where nothing happens except on the reception of a message. Then with Prolog and Haskell, the languages you write theorem provers in. Then with the idea, from Turing himself, that programming is applied logic.
+
+The industry went the other way. Business software was born with COBOL and the belief that rigour is optional. Vibe coding is the same belief at machine speed — and the numbers are in: ~45% of AI-generated code has security flaws (Veracode), experienced developers were 19% slower with AI tools while believing they were faster (METR), 95% of enterprise GenAI pilots show no P&L impact (MIT).
+
+I don't think hallucination is a scaling problem. Neither, in their own words, do some of the people closest to the models. When DeepMind needed answers that had to be right, it paired a model with a symbolic prover. The model proposes; a logic decides.
+
+That's my bet, and it has cost me — years against the grain, and lately a job. But code is about to be cheap and quality is not, and the companies that matter will move to engineering: formal requirements, derived architectures, verification on the model before the code. That's Turing.
+
+The essay, with all the sources: https://www.mlambda.net/articles/the-future-i-see/
+
+#NeuroSymbolicAI #SoftwareArchitecture #FormalMethods #AI #LLM #ActorModel #OpenToWork
