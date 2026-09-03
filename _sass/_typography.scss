@@ -1,0 +1,39 @@
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.6em;
+}
+
+h1 { font-size: 2.4rem; }
+h2 { font-size: 1.5rem; margin-top: 2.4em; }
+h3 { font-size: 1.1rem; margin-top: 1.6em; }
+
+p { margin: 0 0 1.2em; }
+
+.lede { font-size: 1.15rem; color: var(--muted); max-width: var(--measure); }
+.muted { color: var(--muted); }
+
+.mono,
+.card__meta,
+.tier,
+.tag,
+.rail-block__label,
+.site-nav a,
+.site-footer {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
+blockquote {
+  margin: 1.6rem 0;
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  border-left: 2px solid var(--accent);
+  color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  h1 { font-size: 1.9rem; }
+}

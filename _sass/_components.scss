@@ -1,0 +1,90 @@
+// Hero ----------------------------------------------------------------------
+
+.hero { padding: 1rem 0 2rem; }
+.hero h1 { font-size: 2.8rem; max-width: 36rem; }
+.hero__lede { font-size: 1.15rem; max-width: var(--measure); }
+
+@media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
+
+// Cards ---------------------------------------------------------------------
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.2rem;
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  padding: 1.3rem 1.4rem 1.4rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.card:hover { border-color: var(--accent); text-decoration: none; }
+.card__title { font-family: var(--display); font-size: 1.15rem; font-weight: 600; margin: 0.5rem 0 0.3rem; }
+.card__tagline { margin: 0 0 0.8rem; color: var(--muted); }
+.card__meta { color: var(--muted); display: block; }
+
+// Tier badges ---------------------------------------------------------------
+
+.tier {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+}
+.tier--open { color: var(--accent); }
+.tier--commercial { color: var(--warm); }
+.tier--research { color: var(--research); }
+
+// Product rail --------------------------------------------------------------
+
+.rail-block { margin-bottom: 1.6rem; }
+.rail-block__label { display: block; color: var(--muted); margin-bottom: 0.4rem; text-transform: uppercase; }
+.rail-block ul { list-style: none; margin: 0; padding: 0; }
+.rail-block li { margin-bottom: 0.35rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: 0; padding: 0; }
+.tag { border: 1px solid var(--rule); color: var(--muted); padding: 0.15rem 0.5rem; border-radius: 2px; }
+
+// Buttons -------------------------------------------------------------------
+
+.btn {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.55rem 1rem;
+  text-decoration: none;
+}
+.btn:hover { background: var(--accent); color: var(--ground); }
+
+// Diagrams ------------------------------------------------------------------
+
+.diagram { max-width: 56rem; margin: 2rem 0; }
+.diagram svg { width: 100%; height: auto; display: block; }
+.diagram .box { fill: var(--surface); stroke: var(--rule); }
+.diagram .box--accent { stroke: var(--accent); }
+.diagram .label { font-family: var(--display); font-size: 15px; font-weight: 600; fill: var(--ink); }
+.diagram .sub { font-family: var(--mono); font-size: 11px; fill: var(--muted); }
+.diagram .arrow { stroke: var(--muted); fill: none; }
+.diagram .arrowhead { fill: var(--muted); }
+
+// Story figures -------------------------------------------------------------
+
+.story-figure { margin: 2rem 0 1.2rem; }
+.story-figure img { display: block; border: 1px solid var(--rule); background: var(--surface); }
+
+// Services ------------------------------------------------------------------
+
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1.2rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.service { background: var(--surface); border: 1px solid var(--rule); padding: 1.4rem; }
+.service__name { font-family: var(--display); font-size: 1.15rem; margin: 0 0 0.5rem; }
+.service ul { padding-left: 1.1rem; margin: 0.6rem 0 1rem; }

@@ -1,0 +1,33 @@
+// Dark-first. Only the tokens that change are restated for light.
+:root {
+  --ground: #0b0e12;
+  --surface: #141920;
+  --ink: #e6e8eb;
+  --muted: #9aa3ad;
+  --rule: #242b34;
+  --accent: #5cc8d6;
+  --warm: #e0a458;
+  --research: #b48ead;
+
+  --display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", Roboto, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --shell: 72rem;
+  --measure: 44rem;
+
+  color-scheme: dark light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --ground: #f6f7f8;
+    --surface: #ffffff;
+    --ink: #151a1f;
+    --muted: #5c6670;
+    --rule: #d9dee4;
+    --accent: #0f7f8c;
+    --warm: #9a5f12;
+    --research: #6b4d7a;
+  }
+}
