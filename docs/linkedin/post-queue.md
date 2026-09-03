@@ -238,3 +238,19 @@ Today it compiles to C# and runs on .NET. It is built so that a second emitter i
 Where it belongs: reserves, loss models, sensitivities, stochastic analysis — anywhere a formula has to be right before it becomes a number. https://www.mlambda.net/articles/the-formula-is-the-model/
 
 #ComputerAlgebra #Actuarial #Engineering #DotNet #Statistics #Compilers
+
+---
+
+## Day 17 — The code era is over
+
+For seventy years the information that defines a system has lived in its code. The requirements were written, then the code, and from that moment the code was the truth and the requirements were a memory.
+
+That era is ending — not because models type faster, but because DSLs, intermediate representations and deterministic metaprogramming can make code a consequence of knowledge instead of its hiding place.
+
+At MLambda: requirements in a ubiquitous language (the one place an LLM helps) → Guimel, a DDD language that is the IR — five views of one system, mutation-free, an aggregate is an actor → Samek, the architecture inferred by rules (an invariant spanning two entities forces one aggregate: boundaries are computed, not chosen) → Bet, deterministic pattern machinery with no language model in the loop. Same .gm in, same solution out. The generated actor says it itself: no computation the specification did not imply.
+
+The human states what the system is and grounds the waivers. The machine infers, checks, emits, derives the tests, and refuses what it can't justify. The LLM never sees the code.
+
+Edges stated in the article: one target (C#) today, the second on the public roadmap; the analysis still finds emitter defects; Genesis is 0.x. The thesis is the direction. https://www.mlambda.net/articles/the-code-era-is-over/
+
+#Metaprogramming #DSL #DDD #SoftwareArchitecture #AI #ModelDrivenEngineering
