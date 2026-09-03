@@ -222,3 +222,19 @@ That's the meta-cognition an LLM can't do: knowing what it knows, how well, and 
 https://www.mlambda.net/articles/context-that-has-been-proved/
 
 #AI #RAG #KnowledgeGraphs #NeuroSymbolicAI #ExpertSystems #LLM
+
+---
+
+## Day 16 — The formula is the model
+
+For an engineer or an actuary, the formula is the model. The numbers are what you get after.
+
+Genesis has a CAS rule language: write the derivative, the present-value rule, the sensitivity you care about as pattern arms — the way you'd write them on a whiteboard — Hindley–Milner checks the types, and the compiler emits code you call from your own project. Symbolic differentiate, integrate, simplify, solve, Taylor-expand — as pure functions, in the process that has the data.
+
+Beside it, Scryer: intervals, distributions and modal variables (Diday's symbolic data analysis), PCA, regression that returns its diagnostics, clustering — deterministic by seed, so a result reproduces.
+
+Today it compiles to C# and runs on .NET. It is built so that a second emitter is a plug-in, not a rewrite — one language, one typed AST, one emitter per target — and that second target is on the public roadmap, stated as planned rather than done.
+
+Where it belongs: reserves, loss models, sensitivities, stochastic analysis — anywhere a formula has to be right before it becomes a number. https://www.mlambda.net/articles/the-formula-is-the-model/
+
+#ComputerAlgebra #Actuarial #Engineering #DotNet #Statistics #Compilers

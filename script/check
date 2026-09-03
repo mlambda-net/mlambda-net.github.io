@@ -255,6 +255,13 @@ assert_contains "articles/context-that-has-been-proved/index.html" "symbolic dat
 assert_file "images/articles/ns-11-cag.png"
 assert_contains "articles/index.html" "Context that has been proved"
 
+assert_file "articles/the-formula-is-the-model/index.html"
+assert_contains "articles/the-formula-is-the-model/index.html" "one emitter, and it"
+assert_contains "articles/the-formula-is-the-model/index.html" "planned, with no code yet"
+assert_contains "articles/the-formula-is-the-model/index.html" "no Monte Carlo or"
+assert_file "images/articles/ns-12-cas-engineering.png"
+assert_contains "articles/index.html" "The formula is the model"
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi
