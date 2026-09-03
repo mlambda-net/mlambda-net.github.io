@@ -28,14 +28,12 @@
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
 }
 
-.masthead__logo { display: inline-flex; align-items: center; }
-.masthead__logo img { height: 32px; width: auto; }
-.masthead__logo .logo-mobile { display: none; }
-
-@media (max-width: 640px) {
-  .masthead__logo .logo-desktop { display: none; }
-  .masthead__logo .logo-mobile { display: inline; height: 28px; }
-}
+.masthead__logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+.masthead__logo .mark { height: 32px; width: 32px; border-radius: 7px; box-shadow: 0 0 0 1px var(--rule), 0 6px 16px -8px rgba(0, 0, 0, 0.6); }
+.wordmark { font-family: var(--display); font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--ink); line-height: 1; }
+.wordmark__accent { background: linear-gradient(92deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.site-footer .masthead__logo .mark { height: 28px; width: 28px; }
+.site-footer .wordmark { font-size: 1.1rem; }
 
 .site-nav ul { display: flex; flex-wrap: wrap; gap: 1.6rem; list-style: none; margin: 0; padding: 0; }
 .site-nav a { color: var(--muted); text-decoration: none; padding: 0.3rem 0; position: relative; transition: color 160ms ease; }
