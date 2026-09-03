@@ -812,7 +812,7 @@ is a compiler workbench that model-checks a specification before anything is bui
 foreign-function interface. <a href="{{ '/products/actors/' | relative_url }}">MLambda.Actors</a>
 is an actor runtime for .NET and <a href="{{ '/products/data/' | relative_url }}">MLambda.Data</a>
 a database built entirely out of actors, its consistency model specified in TLA+. On top of them
-sits the <a href="{{ '/products/factory/' | relative_url }}">Factory</a>: a society of agents that
+sits the <a href="{{ '/products/turing/' | relative_url }}">Factory</a>: a society of agents that
 turns a plain-language description into a formal specification, verifies it, and generates the
 tested, containerised system that follows from it.</p>
 
@@ -855,7 +855,7 @@ _data/company.yml; the legal-name line renders only when one is set."
 ## Task 4: Products collection, product layout, products index
 
 **Files:**
-- Create: `_products/factory.md`, `genesis.md`, `aleph.md`, `actors.md`, `data.md`, `ui.md`, `os.md`, `hilbert.md`, `_includes/tier.html`, `_includes/product-card.html`, `_includes/story-figure.html`, `_layouts/product.html`, `products.md`, `docs/genesis-images.md`
+- Create: `_products/turing.md`, `genesis.md`, `aleph.md`, `actors.md`, `data.md`, `ui.md`, `os.md`, `hilbert.md`, `_includes/tier.html`, `_includes/product-card.html`, `_includes/story-figure.html`, `_layouts/product.html`, `products.md`, `docs/genesis-images.md`
 - Modify: `script/check`
 
 **Interfaces:**
@@ -870,7 +870,7 @@ assert_file "products/index.html"
 assert_contains "products/genesis/index.html" "MIT"
 assert_contains "products/actors/index.html" "MIT"
 for s in factory aleph data ui os hilbert; do assert_absent "products/$s/index.html" "MIT"; done
-assert_contains "products/factory/index.html" "in active development; demonstrations by arrangement"
+assert_contains "products/turing/index.html" "in active development; demonstrations by arrangement"
 assert_contains "products/genesis/index.html" "published on NuGet"
 assert_contains "products/aleph/index.html" "v1.2.0"
 assert_contains "products/actors/index.html" "v2.2 on NuGet"
@@ -886,9 +886,9 @@ assert_contains "products/aleph/index.html" "genesis.mlambda.net/#/languages/ale
 assert_contains "products/data/index.html" "data.mlambda.net"
 assert_contains "products/ui/index.html" "mvvm.mlambda.net"
 assert_contains "products/os/index.html" "mlambda-net.github.io/MLambda.OS"
-assert_contains "products/factory/index.html" "genesis.mlambda.net"
+assert_contains "products/turing/index.html" "genesis.mlambda.net"
 assert_contains "products/hilbert/index.html" "no public release"
-assert_contains "products/factory/index.html" "17 specialised agents"
+assert_contains "products/turing/index.html" "17 specialised agents"
 assert_contains "products/index.html" "tier--open"
 assert_contains "products/index.html" "tier--commercial"
 assert_contains "products/index.html" "tier--research"
@@ -963,11 +963,11 @@ layout: default
 
 - [ ] **Step 4: Write the eight product documents**
 
-`_products/factory.md`:
+`_products/turing.md`:
 
 ```markdown
 ---
-title: MLambda Factory
+title: MLambda Turing
 tagline: Describe a system in plain language. Get back one that was verified before it was built.
 tier: commercial
 status: in active development; demonstrations by arrangement
@@ -1064,8 +1064,8 @@ Add to `_sass/_components.scss`:
 .story-figure img { display: block; border: 1px solid var(--rule); background: var(--surface); }
 ```
 
-Add to the Task 4 assertions: `assert_contains "products/factory/index.html" "The story"` and
-`assert_absent "products/factory/index.html" "story-figure"` (no images exist yet, so no figure
+Add to the Task 4 assertions: `assert_contains "products/turing/index.html" "The story"` and
+`assert_absent "products/turing/index.html" "story-figure"` (no images exist yet, so no figure
 may render — this proves the guard works; remove the second line once images are added).
 
 - [ ] **Step 4b: Write the image brief for the user**
@@ -1076,7 +1076,7 @@ who will generate the images, not site content):
 ```markdown
 # Genesis / Factory story — image brief
 
-Four images, one per beat of "The story" on /products/factory/. Drop each file at the path
+Four images, one per beat of "The story" on /products/turing/. Drop each file at the path
 given; the page renders it automatically. Then delete the `assert_absent … "story-figure"`
 line from `script/check`.
 
@@ -1791,7 +1791,7 @@ engagements confirmed on offer. No figures; terms per engagement."
 
 ```bash
 assert_file "sitemap.xml"
-for r in products method services about products/factory products/genesis products/aleph products/actors products/data products/ui products/os products/hilbert; do assert_contains "sitemap.xml" "/$r/"; done
+for r in products method services about products/turing products/genesis products/aleph products/actors products/data products/ui products/os products/hilbert; do assert_contains "sitemap.xml" "/$r/"; done
 assert_contains "index.html" "og:title"
 assert_contains "products/genesis/index.html" "og:description"
 ```

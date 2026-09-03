@@ -1,0 +1,9 @@
+{%- assign p = include.product -%}
+<li>
+  <a class="card" href="{{ p.url | relative_url }}">
+    {% include tier.html tier=p.tier %}
+    <h3 class="card__title">{{ p.title }}</h3>
+    <p class="card__tagline">{{ p.tagline }}</p>
+    <span class="card__meta">{{ p.status }}</span>
+  </a>
+</li>

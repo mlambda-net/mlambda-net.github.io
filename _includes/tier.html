@@ -1,0 +1,5 @@
+{%- case include.tier -%}
+{%- when "open" -%}<span class="tier tier--open">Open · MIT</span>
+{%- when "commercial" -%}<span class="tier tier--commercial">Commercial · early access</span>
+{%- else -%}<span class="tier tier--research">Research</span>
+{%- endcase -%}

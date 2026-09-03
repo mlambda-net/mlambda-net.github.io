@@ -1,0 +1,7 @@
+{%- assign found = site.static_files | where: "path", include.src | first -%}
+{%- if found -%}
+<figure class="story-figure">
+  <img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy" width="{{ include.w | default: 1920 }}" height="{{ include.h | default: 900 }}">
+  {%- if include.caption %}<figcaption class="muted mono">{{ include.caption }}</figcaption>{% endif -%}
+</figure>
+{%- endif -%}

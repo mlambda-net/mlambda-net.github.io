@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<div class="shell">
+  <div class="hero">
+    {% include tier.html tier=page.tier %}
+    <h1>{{ page.title }}</h1>
+    <p class="hero__lede">{{ page.tagline }}</p>
+    <p class="mono muted">Status: {{ page.status }}</p>
+  </div>
+
+  <div class="product">
+    <aside class="product__rail">
+      <div class="rail-block">
+        <span class="rail-block__label">Where to verify</span>
+        <ul>
+          {%- if page.docs %}<li><a href="{{ page.docs }}">Documentation →</a></li>{% endif -%}
+          {%- for p in page.packages %}<li><a href="{{ p.url }}">{{ p.name }} on NuGet →</a></li>{% endfor -%}
+          {%- if page.docs == nil and page.packages.size == 0 %}<li class="muted">No public release.</li>{% endif -%}
+        </ul>
+      </div>
+      <div class="rail-block">
+        <span class="rail-block__label">Technology</span>
+        <ul class="tags">{% for t in page.tech %}<li class="tag">{{ t }}</li>{% endfor %}</ul>
+      </div>
+      <div class="rail-block">
+        <a class="btn" href="{{ '/products/' | relative_url }}">All products</a>
+      </div>
+    </aside>
+    <div class="product__body">
+      {{ content }}
+    </div>
+  </div>
+</div>

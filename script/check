@@ -136,6 +136,36 @@ assert_contains "about/index.html" "2019"
 assert_contains "about/index.html" "yordivad.github.io"
 assert_absent "about/index.html" "S.A."
 
+for s in turing genesis aleph actors data ui os hilbert; do assert_file "products/$s/index.html"; done
+assert_file "products/index.html"
+assert_contains "products/genesis/index.html" "MIT"
+assert_contains "products/actors/index.html" "MIT"
+for s in turing aleph data ui os hilbert; do assert_absent "products/$s/index.html" "MIT"; done
+assert_contains "products/turing/index.html" "in active development; demonstrations by arrangement"
+assert_contains "products/genesis/index.html" "published on NuGet"
+assert_contains "products/aleph/index.html" "v1.2.0"
+assert_contains "products/actors/index.html" "v2.2 on NuGet"
+assert_contains "products/data/index.html" "in development"
+assert_contains "products/ui/index.html" "in development"
+assert_contains "products/os/index.html" "research microkernel"
+assert_contains "products/hilbert/index.html" "research, not yet released"
+assert_contains "products/genesis/index.html" "genesis.mlambda.net"
+assert_contains "products/genesis/index.html" "nuget.org/packages/MLambda.Genesis.Parser"
+assert_contains "products/actors/index.html" "actors.mlambda.net"
+assert_contains "products/actors/index.html" "nuget.org/packages/MLambda.Actors"
+assert_contains "products/aleph/index.html" "genesis.mlambda.net/#/languages/aleph"
+assert_contains "products/data/index.html" "data.mlambda.net"
+assert_contains "products/ui/index.html" "mvvm.mlambda.net"
+assert_contains "products/os/index.html" "mlambda-net.github.io/MLambda.OS"
+assert_contains "products/turing/index.html" "genesis.mlambda.net"
+assert_contains "products/hilbert/index.html" "No public release"
+assert_contains "products/turing/index.html" "17 specialised agents"
+assert_contains "products/turing/index.html" "The story"
+assert_contains "products/turing/index.html" "images/turing/06-source.png"
+assert_contains "products/index.html" "tier--open"
+assert_contains "products/index.html" "tier--commercial"
+assert_contains "products/index.html" "tier--research"
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi
