@@ -1,0 +1,10 @@
+<footer class="site-footer">
+  <div class="shell">
+    <ul>
+      <li><a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a></li>
+      <li><a href="{{ site.data.company.github }}">GitHub</a></li>
+      <li><a href="{{ site.data.company.founder.url }}">{{ site.data.company.founder.name }}</a></li>
+    </ul>
+    <p>{% if site.data.company.legal_name != "" %}{{ site.data.company.legal_name }} · {% endif %}{{ site.data.company.name }} · {{ site.data.company.location }} · since {{ site.data.company.founded }}</p>
+  </div>
+</footer>

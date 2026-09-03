@@ -123,6 +123,19 @@ assert_contains "assets/css/main.css" "--accent: #5cc8d6"
 assert_contains "assets/css/main.css" "prefers-color-scheme: light"
 assert_contains "assets/css/main.css" "JetBrains Mono"
 
+assert_contains "index.html" "site-nav"
+assert_contains "index.html" "/products/"
+assert_contains "index.html" "/method/"
+assert_contains "index.html" "/services/"
+assert_contains "index.html" "/about/"
+assert_contains "index.html" "roy.gonzalez@mlambda.net"
+assert_contains "index.html" "images/logo/logo.svg"
+assert_file "about/index.html"
+assert_contains "about/index.html" "Heredia, Costa Rica"
+assert_contains "about/index.html" "2019"
+assert_contains "about/index.html" "yordivad.github.io"
+assert_absent "about/index.html" "S.A."
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi

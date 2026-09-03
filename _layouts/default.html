@@ -4,8 +4,20 @@
   {%- include head.html -%}
 </head>
 <body>
+  <header class="masthead">
+    <div class="shell masthead__inner">
+      <a class="masthead__logo" href="{{ '/' | relative_url }}" aria-label="MLambda home">
+        <img class="logo-desktop" src="{{ '/images/logo/logo.svg' | relative_url }}" alt="MLambda">
+        <img class="logo-mobile" src="{{ '/images/logo/logo-mobile.svg' | relative_url }}" alt="MLambda">
+      </a>
+      {%- include nav.html -%}
+    </div>
+  </header>
+
   <main id="content">
     {{ content }}
   </main>
+
+  {%- include footer.html -%}
 </body>
 </html>

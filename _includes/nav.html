@@ -1,0 +1,8 @@
+<nav class="site-nav" aria-label="Main">
+  <ul>
+    <li><a href="{{ '/products/' | relative_url }}"{% if page.url contains '/products/' %} aria-current="page"{% endif %}>Products</a></li>
+    <li><a href="{{ '/method/' | relative_url }}"{% if page.url == '/method/' %} aria-current="page"{% endif %}>Method</a></li>
+    <li><a href="{{ '/services/' | relative_url }}"{% if page.url == '/services/' %} aria-current="page"{% endif %}>Services</a></li>
+    <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a></li>
+  </ul>
+</nav>
