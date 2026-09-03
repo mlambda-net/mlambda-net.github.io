@@ -276,6 +276,7 @@ assert_contains "articles/system-two/index.html" "consistent falsehood that no a
 assert_file "images/articles/ns-14-system-two.png"
 assert_file "articles/the-future-i-see/index.html"
 assert_contains "articles/the-future-i-see/index.html" "negative half: scaling a System 1 does"
+assert_contains "articles/the-future-i-see/index.html" "I use a language model to help write better"
 assert_contains "articles/index.html" "The future I see"
 assert_contains "articles/the-future-i-see/index.html" "I would rather be wrong with a proof than right by accident"
 assert_contains "articles/the-future-i-see/index.html" "arxiv.org/abs/2509.04664"

@@ -150,9 +150,9 @@ not produce a System 2.</p>
 
 <h2>My bet</h2>
 
-<p>So I do not use a language model to write code. I built a powerful inference engine instead, and I put
-the model where it is genuinely good: in front of the human, gathering and validating requirements in
-the domain's own language. From the requirements a calculator — not a guesser — derives the logic, and
+<p>So I do not use a language model to write code. I use a language model to help write better
+requirements. I built a powerful inference engine for the rest, and I put the model where it is genuinely
+good: in front of the human, gathering and validating requirements in the domain's own language. From the requirements a calculator — not a guesser — derives the logic, and
 the logic is emitted to the target language. This is more efficient than generation and, more
 importantly, deterministic: the same requirements produce the same system, and a change in one is a
 change in the other. The architecture is actors, by construction. The verification is mathematical and
