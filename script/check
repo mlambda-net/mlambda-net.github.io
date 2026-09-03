@@ -240,6 +240,13 @@ assert_contains "articles/a-cas-for-engineers/index.html" "occurs check"
 assert_contains "articles/index.html" "Prolog in C#"
 for i in 07-efficiency 08-shin 09-cas; do assert_file "images/articles/ns-$i.png"; done
 
+assert_file "articles/the-intelligence-llms-are-missing/index.html"
+assert_contains "articles/the-intelligence-llms-are-missing/index.html" "If they disagree, the checker throws"
+assert_contains "articles/the-intelligence-llms-are-missing/index.html" "35 of 35"
+assert_contains "articles/the-intelligence-llms-are-missing/index.html" "queryable scaffolds"
+assert_file "images/articles/ns-10-verification.png"
+assert_contains "articles/index.html" "The intelligence LLMs are missing"
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi

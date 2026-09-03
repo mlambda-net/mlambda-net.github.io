@@ -188,3 +188,19 @@ And it's open: any IRewriteSystem adds rules. So there's a CAS rule language —
 Limits stated plainly on the page: double coefficients, real roots, no occurs check yet. What it claims is narrower and true. dotnet add package MLambda.Genesis.Algebra — MIT. https://www.mlambda.net/articles/a-cas-for-engineers/
 
 #ComputerAlgebra #DotNet #Compilers #Engineering #OpenSource
+
+---
+
+## Day 14 — The intelligence LLMs are missing
+
+Ask a language model whether a function has a bug and it answers with the confidence of a colleague and the epistemics of a weather forecast.
+
+It's predicting the next token over a manifold. A bug is a statement that is false about a program — an invariant some reachable state violates, an obligation no test checks. Establishing that is logic and mathematics. No amount of probability becomes it.
+
+That's the intelligence LLMs are missing, and it's what I build. A native TLA+ model checker whose verification logic is Shin rules — reachability as a least fixpoint — with counterexamples certified before they're believed, and verdict semantics implemented twice so disagreement throws. Static and dynamic analysis whose verdicts are rules, not opinions. Tests derived as obligations from the model. Mutation scored exactly: survivors are measured, kills are an upper bound, and the tool says so.
+
+What it found on one generated system: 114 tests, 35 failures — all 35 explained by eight defects, arithmetic that had to sum — and one false green a passing test would never have shown.
+
+The model gathers. The proofs decide. https://www.mlambda.net/articles/the-intelligence-llms-are-missing/
+
+#FormalMethods #ModelChecking #ProgramAnalysis #AI #SoftwareQuality #TLAplus
