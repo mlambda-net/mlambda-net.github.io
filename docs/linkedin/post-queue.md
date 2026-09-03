@@ -146,3 +146,45 @@ My training is half software engineering and half philosophy of formal science, 
 If that's how you think software should be built, let's talk. https://www.mlambda.net/method/
 
 #FormalMethods #SoftwareEngineering #AI #DDD #OpenToWork
+
+---
+
+## Day 11 — Efficiency by construction
+
+There are two kinds of performance: the kind you tune, and the kind the architecture has no place to lose.
+
+MLambda.Actors never takes a lock on your state — an actor owns it and handles one message at a time. Every response is an IObservable, so retry, timeout, fan-out and backpressure are operators, not plumbing. [Ephemeral] actors remove the mailbox funnel under load. A local reference is a reference, not a serialisation. Membership is gossip — O(log N) rounds, no ZooKeeper to lose.
+
+MLambda.Data inherits all of it and adds: zero parsing (typed messages, no plan to build), zero-copy locally (0 serialisation hops instead of 4), and an LSM engine whose costs are stated plainly — cache-hit reads under 5 µs, writes bound by the WAL fsync.
+
+The numbers on the performance page are design targets, published so they can be held against measurement. https://www.mlambda.net/articles/efficiency-by-construction/
+
+#DistributedSystems #Databases #ActorModel #DotNet #Performance
+
+---
+
+## Day 12 — Prolog in C#
+
+Every serious C# codebase grows a rules engine, and it always ends as the class nobody wants to touch.
+
+Shin is my answer: a rule language — typed records, Prolog-style rules and queries, structural pattern matching — that compiles to C# at build time through a Roslyn source generator. The rules are source; the C# is generated; diagnostics fire in the build.
+
+Under it, a hybrid kernel: forward chaining (semi-naive Datalog), backward chaining (tabled SLD with stratified negation), and Stratego-style term rewriting — over an immutable knowledge base where every version stays valid. Four modal logics. Truth maintenance. explain returns the proof tree; abduce returns the facts that would make a goal true.
+
+The deepest use: the TLA+ checker's verdict semantics expressed a second time as Shin rules, re-evaluated against the C# evaluator. If they disagree, the checker throws. Two independent meanings agreeing is how you trust a verdict. https://www.mlambda.net/articles/prolog-in-csharp/
+
+#Prolog #Datalog #DotNet #FormalMethods #Compilers #AI
+
+---
+
+## Day 13 — A CAS for engineers
+
+For an engineer, the formula is the specification and the numbers are what you get after.
+
+MLambda.Genesis.Algebra puts symbolic algebra in .NET: differentiate, integrate, simplify, expand, solve, polynomial GCD and factoring, Taylor series, matching modulo associativity and commutativity — pure functions over a seven-constructor expression type.
+
+And it's open: any IRewriteSystem adds rules. So there's a CAS rule language — pattern arms with guards, Hindley–Milner typed — that Roslyn compiles into the algebra. You write the product rule the way you'd write it on a whiteboard; the C# is generated.
+
+Limits stated plainly on the page: double coefficients, real roots, no occurs check yet. What it claims is narrower and true. dotnet add package MLambda.Genesis.Algebra — MIT. https://www.mlambda.net/articles/a-cas-for-engineers/
+
+#ComputerAlgebra #DotNet #Compilers #Engineering #OpenSource

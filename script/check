@@ -232,6 +232,14 @@ assert_contains "articles/refusal-is-a-result/index.html" "images/turing/04-mode
 assert_contains "index.html" 'href="/articles/"'
 assert_contains "sitemap.xml" "/articles/no-locks/"
 
+for a in efficiency-by-construction prolog-in-csharp a-cas-for-engineers; do assert_file "articles/$a/index.html"; done
+assert_contains "articles/efficiency-by-construction/index.html" "design targets"
+assert_contains "articles/prolog-in-csharp/index.html" "Roslyn incremental source generator"
+assert_contains "articles/prolog-in-csharp/index.html" "disagree, the checker throws"
+assert_contains "articles/a-cas-for-engineers/index.html" "occurs check"
+assert_contains "articles/index.html" "Prolog in C#"
+for i in 07-efficiency 08-shin 09-cas; do assert_file "images/articles/ns-$i.png"; done
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi
