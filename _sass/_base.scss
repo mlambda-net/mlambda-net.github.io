@@ -2,15 +2,19 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { font-size: 106.25%; }
+html { font-size: 106.25%; scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--ground);
+  background:
+    radial-gradient(60rem 30rem at 50% -10rem, var(--glow-2), transparent 70%),
+    var(--ground);
   color: var(--ink);
   font-family: var(--body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 img, svg { max-width: 100%; height: auto; }
@@ -18,7 +22,7 @@ img, svg { max-width: 100%; height: auto; }
 a {
   color: var(--accent);
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.16em;
+  text-underline-offset: 0.18em;
 }
 
 a:hover { text-decoration-thickness: 2px; }
@@ -27,7 +31,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 3rem 0; }
 
 ::selection { background: var(--accent); color: var(--ground); }
 
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
 code, pre {
   font-family: var(--mono);
@@ -37,9 +41,11 @@ code, pre {
 pre {
   background: var(--surface);
   border: 1px solid var(--rule);
-  padding: 0.9rem 1rem;
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
   overflow-x: auto;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ink) 6%, transparent);
 }
 
-code { background: var(--surface); padding: 0.1em 0.35em; border-radius: 3px; }
+code { background: var(--surface-2); padding: 0.1em 0.4em; border-radius: 4px; }
 pre code { background: none; padding: 0; }

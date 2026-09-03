@@ -273,3 +273,31 @@
 .mission__map strong { display: block; font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.02em; color: var(--accent); margin-bottom: 0.15rem; }
 .mission__map span { color: var(--muted); font-size: 0.95rem; }
 @media (max-width: 900px) { .mission__body { grid-template-columns: 1fr; gap: 1.5rem; } }
+
+// Depth and finish ----------------------------------------------------------
+
+.card, .pillar, .service, .verticals li, .art--hero, .shot, .story-figure img {
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--ink) 5%, transparent) inset,
+    0 18px 40px -28px rgba(0, 0, 0, 0.55);
+}
+.card, .pillar, .service {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 70%, var(--surface)), var(--surface));
+}
+.pillar { position: relative; overflow: hidden; }
+.pillar::after {
+  content: ""; position: absolute; right: -3rem; top: -3rem; width: 9rem; height: 9rem; border-radius: 50%;
+  background: radial-gradient(closest-side, var(--glow), transparent); pointer-events: none;
+}
+.service { transition: border-color 160ms ease, transform 160ms ease; }
+.service:hover { border-color: var(--accent); transform: translateY(-2px); }
+.service--primary { background: linear-gradient(180deg, color-mix(in srgb, var(--glow) 60%, var(--surface)), var(--surface)); }
+.story-figure img { border-radius: 8px; }
+.art--hero { padding: 1rem; background: linear-gradient(180deg, var(--surface-2), var(--surface)); }
+.hero--split .art--hero { box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--glow); }
+.proof__num { background: linear-gradient(92deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.mission__map strong { color: var(--accent); }
+.tier--open { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.tier--commercial { background: color-mix(in srgb, var(--warm) 10%, transparent); }
+.tier--research { background: color-mix(in srgb, var(--research) 10%, transparent); }
+.btn--primary { box-shadow: 0 10px 24px -12px color-mix(in srgb, var(--accent) 70%, transparent); }

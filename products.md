@@ -1,5 +1,6 @@
 ---
 layout: page
+eyebrow: Products
 title: Products
 subtitle: Two tiers, stated on every page. Open products are MIT-licensed on NuGet with public documentation; Commercial products have public documentation and are available under licence or through early access.
 description: The MLambda product line — Turing, Genesis, Aleph, MLambda.Actors, MLambda.Data, MLambda.UI, MLambda.OS and Hilbert — with tiers, status and where to verify each.

@@ -1,5 +1,6 @@
 ---
 layout: page
+eyebrow: About
 title: About MLambda
 subtitle: A software company building the stack for software that is verified before it is built.
 description: MLambda is a software company in Heredia, Costa Rica, founded in 2019 by Roy Gonzalez. Compiler tooling, an actor runtime, a distributed database, and an agentic factory.

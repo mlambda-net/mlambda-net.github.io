@@ -1,5 +1,6 @@
 ---
 layout: page
+eyebrow: Services
 title: Work with MLambda
 subtitle: Four ways to engage, starting with seeing it run. Terms are agreed per engagement.
 description: A Turing demonstration, consulting, commercial licence and support, and early access to the MLambda stack.

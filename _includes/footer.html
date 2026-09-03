@@ -1,10 +1,30 @@
 <footer class="site-footer">
   <div class="shell">
-    <ul>
-      <li><a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a></li>
-      <li><a href="{{ site.data.company.github }}">GitHub</a></li>
-      <li><a href="{{ site.data.company.founder.url }}">{{ site.data.company.founder.name }}</a></li>
-    </ul>
-    <p>{% if site.data.company.legal_name != "" %}{{ site.data.company.legal_name }} · {% endif %}{{ site.data.company.name }} · {{ site.data.company.location }} · since {{ site.data.company.founded }}</p>
+    <div class="site-footer__grid">
+      <div>
+        <img src="{{ '/images/logo/logo-mobile.svg' | relative_url }}" alt="" width="28" height="28">
+        <p class="site-footer__tag">Software that is verified before it is built.</p>
+        <p>{{ site.data.company.name }} · {{ site.data.company.location }} · since {{ site.data.company.founded }}</p>
+      </div>
+      <div>
+        <span class="site-footer__label">Explore</span>
+        <ul>
+          <li><a href="{{ '/products/' | relative_url }}">Products</a></li>
+          <li><a href="{{ '/products/turing/' | relative_url }}">Turing</a></li>
+          <li><a href="{{ '/method/' | relative_url }}">Method</a></li>
+          <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <span class="site-footer__label">Contact</span>
+        <ul>
+          <li><a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a></li>
+          <li><a href="{{ site.data.company.github }}">GitHub</a></li>
+          <li><a href="{{ site.data.company.founder.url }}">{{ site.data.company.founder.name }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="site-footer__legal">{% if site.data.company.legal_name != "" %}{{ site.data.company.legal_name }} · {% endif %}{{ site.data.company.name }} · {{ site.data.company.location }}</p>
   </div>
 </footer>

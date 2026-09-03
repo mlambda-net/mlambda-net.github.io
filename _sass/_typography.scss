@@ -4,15 +4,35 @@ h1, h2, h3 {
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin: 0 0 0.6em;
+  color: var(--ink);
 }
 
 h1 { font-size: 2.5rem; }
-h2 { font-size: 1.55rem; margin-top: 2.4em; }
+
+h2 {
+  font-size: 1.6rem;
+  margin-top: 2.6em;
+  padding-top: 0.9rem;
+  position: relative;
+}
+h2::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 2.2rem; height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
 h3 { font-size: 1.1rem; margin-top: 1.6em; }
 
-p { margin: 0 0 1.2em; }
+p { margin: 0 0 1.25em; }
+.prose p { font-size: 1.02rem; line-height: 1.75; }
+.prose a { text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent); }
+.prose a:hover { text-decoration-color: var(--accent); }
+.prose ul { padding-left: 1.2rem; }
+.prose li { margin-bottom: 0.45rem; }
 
-.lede { font-size: 1.15rem; color: var(--muted); max-width: var(--measure); }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: var(--measure); line-height: 1.6; }
 .muted { color: var(--muted); }
 
 .mono,
@@ -38,4 +58,5 @@ blockquote {
 
 @media (max-width: 768px) {
   h1 { font-size: 1.9rem; }
+  h2 { font-size: 1.35rem; }
 }

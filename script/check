@@ -208,6 +208,10 @@ assert_contains "index.html" "reactive domain-driven design"
 assert_contains "about/index.html" "Where it came from"
 assert_contains "products/turing/index.html" "Where it came from"
 
+assert_contains "index.html" 'type="image/svg+xml" href="/images/favicon-32x32.svg"'
+assert_contains "about/index.html" 'class="page-head"'
+assert_contains "index.html" "site-footer__grid"
+
 if [ "${1:-}" = "--links" ]; then
   check_links
 fi

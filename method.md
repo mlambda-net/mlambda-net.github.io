@@ -1,5 +1,6 @@
 ---
 layout: page
+eyebrow: Method
 title: How MLambda builds software
 subtitle: Specified in Z, checked in TLA+, and only then built — by people or by agents — with the tests derived from the model.
 description: The BEAM method and the agentic pipeline behind every MLambda system — formal specification, model checking, generation, derived tests, and measured deployment.
