@@ -284,3 +284,19 @@ That's my bet, and it has cost me — years against the grain, and lately a job.
 The essay, with all the sources: https://www.mlambda.net/articles/the-future-i-see/
 
 #NeuroSymbolicAI #SoftwareArchitecture #FormalMethods #AI #LLM #ActorModel #OpenToWork
+
+## Day 20 — The room and the tower
+
+In 1980 John Searle imagined a man who speaks no Chinese, locked in a room with a rulebook so good that the answers he passes out are perfect Chinese. Nobody inside understands a word.
+
+Today the rulebook is a calculator with a landscape engraved in it: all of human writing poured onto a map and smoothed into hills, so that "generating" is walking downhill one token at a time. The "reasoning" models add one rule — print three pages of working first. A longer walk on the same terrain.
+
+The hills were not made by the machine. They were cast, like a footprint, by the people who wrote the text. A footprint can be astonishingly detailed. It is not a foot.
+
+The industry's answer is scale. Genesis has a story about that: a tower built on the belief that heaven is simply very high up. Loss falls with scale. Meaning was never in the curve.
+
+The tell: 49% of CEOs say most of their own job should be automated. Not one has installed a model in the corner office.
+
+Why a brain can be simulated and a mind cannot be studied from outside itself, for non-specialists: https://www.mlambda.net/articles/the-room-and-the-tower/
+
+#AI #PhilosophyOfMind #LLM #NeuroSymbolicAI #OpenToWork

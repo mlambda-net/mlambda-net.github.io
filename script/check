@@ -283,6 +283,15 @@ assert_contains "articles/the-future-i-see/index.html" "arxiv.org/abs/2509.04664
 assert_absent "articles/the-future-i-see/index.html" "queue.acm.org"
 assert_file "images/articles/ns-15-the-future-i-see.png"
 assert_contains "articles/index.html" "System 2 for machines"
+assert_file "articles/the-room-and-the-tower/index.html"
+assert_contains "articles/the-room-and-the-tower/index.html" "astonishingly detailed. It is not a foot."
+assert_contains "articles/the-room-and-the-tower/index.html" "The valley does not flow."
+assert_contains "articles/the-room-and-the-tower/index.html" "a category is not crossed by"
+assert_contains "articles/the-room-and-the-tower/index.html" "plato.stanford.edu/entries/chinese-room/"
+assert_contains "articles/the-room-and-the-tower/index.html" "The room can be a superb clerk. It should never be the judge."
+assert_absent "articles/the-room-and-the-tower/index.html" "axios.com"
+assert_file "images/articles/ns-16-the-room-and-the-tower.png"
+assert_contains "articles/index.html" "The room and the tower"
 
 if [ "${1:-}" = "--links" ]; then
   check_links
