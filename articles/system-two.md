@@ -148,8 +148,8 @@ is a System 1. The System 2 is the scarce part, and it is engineered, not traine
 <p>Two honesties, so that the argument does not overreach. First, "neuro-symbolic" is a
 direction with open problems: how much of the symbolic layer can be learned rather than
 written, how to keep formalisation from becoming a bottleneck, and how far ontological
-grounding generalises beyond the domains it was built for — MLambda's own research line,
-Hilbert, exists because those questions are unsettled. Second, a System 2 is only as good as
+grounding generalises beyond the domains it was built for — questions MLambda's own research
+keeps open because they are unsettled. Second, a System 2 is only as good as
 the knowledge admitted into it; the gate can refuse the ill-formed and the contradictory, but a
 consistent falsehood that no axiom contradicts will pass. That is why provenance and
 human-grounded axioms are part of the design rather than decoration. Kahneman's point was never

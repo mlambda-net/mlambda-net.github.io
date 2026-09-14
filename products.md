@@ -19,8 +19,3 @@ wide: true
 <ul class="grid-cards">
 {% for product in all %}{% if product.tier == "commercial" %}{% include product-card.html product=product %}{% endif %}{% endfor %}
 </ul>
-
-<h2>Research</h2>
-<ul class="grid-cards">
-{% for product in all %}{% if product.tier == "research" %}{% include product-card.html product=product %}{% endif %}{% endfor %}
-</ul>

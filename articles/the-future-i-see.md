@@ -195,8 +195,8 @@ Turing: not to replace the engineer, but to make engineering the default.</p>
 patience, and lately in a job. It is hard to hold a bet while everyone around you is collecting on the
 opposite one. I know the neuro-symbolic programme has open problems: how much of the symbolic layer can
 be learned rather than written, how to keep formalisation from becoming the bottleneck, how far an
-ontology generalises beyond the domain it was built for. MLambda's research line, Hilbert, exists because
-those questions are not settled, and I would rather name them than hide them. But I have never been
+ontology generalises beyond the domain it was built for. Those questions are not settled, and I would
+rather name them than hide them. But I have never been
 able to make myself believe that a system which cannot verify anything will, at sufficient size, verify
 everything. I would rather be wrong with a proof than right by accident. That is the dream, that is why
 it hurts, and that is why I am not stopping.</p>

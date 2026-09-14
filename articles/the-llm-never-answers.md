@@ -3,7 +3,7 @@ layout: page
 eyebrow: Article · Neuro-symbolic AI
 title: The LLM never answers. Only proofs do.
 subtitle: Why the only way to let language models build software you can trust is to put a symbolic layer in charge of what they say.
-description: Neuro-symbolic AI at MLambda — how Thinker lets language models gather knowledge while an inference engine, a proof kernel and a model checker decide what is admitted; and Hilbert, a transformer that carries five logics inside it.
+description: Neuro-symbolic AI at MLambda — how Thinker lets language models gather knowledge while an inference engine, a proof kernel and a model checker decide what is admitted.
 permalink: /articles/the-llm-never-answers/
 image: /images/articles/ns-01-gathers-decides.png
 ---
@@ -62,35 +62,6 @@ get generated.</p>
 <p>That ordering — prove, then build — is the whole difference between a system that is
 <em>tested</em> and one that is <em>verified</em>. Tests are cases somebody remembered. A model
 checker does not remember; it enumerates.</p>
-
-<h2>Putting the logic inside the network</h2>
-
-<figure class="story-figure">
-  <img src="{{ '/images/articles/ns-02-hilbert.png' | relative_url }}" alt="Diagram of Hilbert: five stacked levels — first-order, relational, modal, temporal, sortal — with a strange loop feeding the top level's error back to the bottom." width="1200" height="627">
-</figure>
-
-<p>Thinker keeps the two layers separate and lets the symbolic one govern. Our research
-programme asks the harder question: can the logic live <em>inside</em> the network?</p>
-
-<p>Hilbert begins from an observation about attention itself. An attention layer is,
-mathematically, an adaptive filter with feedback: the input tokens are the signal, the query,
-key and value matrices are the filter weights, the gradient is the error term, and the
-optimiser plays the role of the update rule. Adaptive filters learn from each sample as it
-arrives. Transformers, as normally trained, do not. Hilbert makes them.</p>
-
-<p>Its architecture is five levels, each carrying a different logic: first-order, with a
-contrastive consistency loss; relational, with graph attention over structure; modal, with a
-multi-world attention matrix; temporal, with linear temporal logic and dual causal and
-bidirectional attention; and sortal, with attention biased by an ontology. Fast weights and
-episodic memory connect the levels, so the network can update per input without a training
-pass. And a strange loop, after Hofstadter, feeds the top level's error signal back down to
-refine the lower four at inference time — the system reasoning about its own reasoning,
-mechanically. A genetic layer evolves populations of fast-weight configurations alongside
-gradient descent, so exploration and refinement run against each other.</p>
-
-<p>Hilbert is research. It has no public release, and it may fail. But it is the same
-commitment as Thinker pursued one level deeper: not a neural system with a reasoner attached,
-but a system in which reasoning is what the network does.</p>
 
 <h2>What it means for the people who build software</h2>
 

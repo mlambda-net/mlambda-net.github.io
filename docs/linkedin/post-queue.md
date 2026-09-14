@@ -95,15 +95,13 @@ This is the application I dreamed of building for many years. I'm building it no
 
 ## Day 7 — Hilbert
 
-Can the logic live inside the network instead of bolted onto the side?
+In 1916 Einstein made a small change to how physics is written: when an index appears twice in a term, sum over it — and stop writing the Σ. It let him write general relativity in a line, and it became one of the most used ideas in mathematical notation.
 
-That's the research question behind Hilbert. It starts from an observation: an attention layer is, mathematically, an adaptive filter with feedback — tokens are the signal, Q/K/V are the weights, the gradient is the error. Adaptive filters learn from each sample. Transformers, as trained, don't. Hilbert makes them.
+Hilbert, our mathematics language, is built on that one idea. You write a formula the way it looks on paper — def radians(d) ≔ d · π / 180 — and the compiler turns it into C# for real numbers and into an ONNX graph for vectors, matrices and tensors. Its only contraction is einsum, Einstein summation; the dot product, matrix inverse, a neural network and a Bellman backup are all ordinary Hilbert definitions on top of it.
 
-Five levels, five logics — first-order, relational, modal, temporal, sortal — connected by fast weights, with a strange loop that feeds the top level's error back down at inference time.
+The compiler knows no identities and no derivatives: sin² + cos² = 1 and the chain rule are laws you can read. Nearly 1,400 definitions in the Prelude, every one documented, every example compiled and run. https://www.mlambda.net/MLambda.Hilbert/
 
-It's research. It may fail. But it's the same rule pursued one level deeper: the language model gathers, the proofs decide. https://www.mlambda.net/articles/the-llm-never-answers/
-
-#NeuroSymbolicAI #MachineLearning #AI #Research
+#Mathematics #Tensors #ONNX #DotNet #Einstein
 
 ---
 
