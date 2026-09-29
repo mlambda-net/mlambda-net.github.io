@@ -298,3 +298,33 @@ The tell: 49% of CEOs say most of their own job should be automated. Not one has
 Why a brain can be simulated and a mind cannot be studied from outside itself, for non-specialists: https://www.mlambda.net/articles/the-room-and-the-tower/
 
 #AI #PhilosophyOfMind #LLM #NeuroSymbolicAI #OpenToWork
+
+## Day 21 — The mind is not in the shadow
+
+The equation x² + 4 = 0 has no answer on the number line. For three centuries its answers were called "imaginary". Then someone drew them on a plane, and they were ordinary points, one axis to the side.
+
+A photograph of a fast robot arm and a still one are identical. The speed is real. It lives in a component an instant does not show.
+
+Two entangled particles change together, kilometres apart. The simplest reading: not two things, one object seen through two windows.
+
+The pattern: what we see is a projection of a reality with more dimensions. So where is consciousness? Leibniz walked into the mill in 1714 and found only parts pushing parts. Neuroscience finds correlates, never the experience.
+
+My thesis: consciousness belongs to the dimensions the projection leaves out. The brain is the circle a sphere draws on Flatland. We never see a mind — we see the intention it casts. And a machine built entirely inside the shadow will not contain it.
+
+The essay, with the sources and two honesties: https://www.mlambda.net/articles/the-mind-is-not-in-the-shadow/
+
+#PhilosophyOfMind #Consciousness #AI #LLM #Philosophy
+
+## Day 22 — Malkhut and the world of ideas
+
+In 1643 Princess Elisabeth of Bohemia asked Descartes the question that has followed him ever since: if the mind has no extension, how does a thought move an arm? He answered with the pineal gland, which moved the problem without solving it.
+
+Kabbalah drew a map of the same territory centuries earlier. Ten sefirot descend from the infinite; the lowest, Malkhut, is the manifest world — it only receives. The soul has five levels, and the ascent of consciousness is a departure from Malkhut.
+
+Read as a projection, the map dissolves Descartes' problem. Mind and body are not two substances pushing each other. They are one reality, seen as a body through the window of three dimensions and known as a mind from inside. There is no wire between the two screens. There is one fish.
+
+We are not a mind attached to a body. We are a mind, seen in three dimensions.
+
+The essay: https://www.mlambda.net/articles/malkhut-and-the-world-of-ideas/
+
+#PhilosophyOfMind #Kabbalah #Descartes #Consciousness #Philosophy

@@ -294,6 +294,20 @@ assert_contains "articles/the-room-and-the-tower/index.html" "The room can be a 
 assert_absent "articles/the-room-and-the-tower/index.html" "axios.com"
 assert_file "images/articles/ns-16-the-room-and-the-tower.png"
 assert_contains "articles/index.html" "The room and the tower"
+assert_file "articles/the-mind-is-not-in-the-shadow/index.html"
+assert_contains "articles/the-mind-is-not-in-the-shadow/index.html" "The brain, on this view, is the circle. The mind is the sphere."
+assert_contains "articles/the-mind-is-not-in-the-shadow/index.html" "Intention is"
+assert_contains "articles/the-mind-is-not-in-the-shadow/index.html" "plato.stanford.edu/entries/intentionality/"
+assert_contains "articles/the-mind-is-not-in-the-shadow/index.html" "Two honesties"
+assert_file "images/articles/ns-17-the-mind-is-not-in-the-shadow.png"
+assert_contains "articles/index.html" "The mind is not in the shadow"
+assert_file "articles/malkhut-and-the-world-of-ideas/index.html"
+assert_contains "articles/malkhut-and-the-world-of-ideas/index.html" "because the machine is the ghost"
+assert_contains "articles/malkhut-and-the-world-of-ideas/index.html" "There is one fish."
+assert_contains "articles/malkhut-and-the-world-of-ideas/index.html" "plato.stanford.edu/entries/elisabeth-bohemia/"
+assert_contains "articles/malkhut-and-the-world-of-ideas/index.html" "Two honesties"
+assert_file "images/articles/ns-18-malkhut-and-the-world-of-ideas.png"
+assert_contains "articles/index.html" "Malkhut and the world of ideas"
 
 if [ "${1:-}" = "--links" ]; then
   check_links
