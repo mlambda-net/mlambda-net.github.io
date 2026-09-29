@@ -328,3 +328,19 @@ We are not a mind attached to a body. We are a mind, seen in three dimensions.
 The essay: https://www.mlambda.net/articles/malkhut-and-the-world-of-ideas/
 
 #PhilosophyOfMind #Kabbalah #Descartes #Consciousness #Philosophy
+
+## Day 23 — Why machines cannot think
+
+Hold your hand in front of a lamp. The shadow is a faithful record of the hand. Now give someone only the shadow and ask for the hand back. They cannot: a fist and a flat palm turned edge-on cast the same line. A projection has no inverse.
+
+Mathematics is exact about this. Going down, from many dimensions to three, is easy. Going back up is impossible: a smooth map out of three dimensions covers no volume of a larger space (Sard, 1942), and no processing creates information the data never carried (the data-processing inequality).
+
+A language model is trained on text, and text is a shadow of a shadow: thought, projected into the world as intention, projected again into a line of symbols. The model learns the outline superbly. It works inside the shadow, and there is no road from the shadow back to what cast it.
+
+Turing was right that we only ever see other minds through their behaviour. That is why his test measures the shadow.
+
+You can project many dimensions to three. You cannot project three back up to many.
+
+The essay: https://www.mlambda.net/articles/why-machines-cannot-think/
+
+#AI #PhilosophyOfMind #LLM #Consciousness #NeuroSymbolicAI

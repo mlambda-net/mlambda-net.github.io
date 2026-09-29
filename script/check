@@ -308,6 +308,14 @@ assert_contains "articles/malkhut-and-the-world-of-ideas/index.html" "plato.stan
 assert_contains "articles/malkhut-and-the-world-of-ideas/index.html" "Two honesties"
 assert_file "images/articles/ns-18-malkhut-and-the-world-of-ideas.png"
 assert_contains "articles/index.html" "Malkhut and the world of ideas"
+assert_file "articles/why-machines-cannot-think/index.html"
+assert_contains "articles/why-machines-cannot-think/index.html" "You cannot project three back up to"
+assert_contains "articles/why-machines-cannot-think/index.html" "Text is a shadow of a shadow"
+assert_contains "articles/why-machines-cannot-think/index.html" "the imitation game tests the shadow"
+assert_contains "articles/why-machines-cannot-think/index.html" "plato.stanford.edu/entries/turing-test/"
+assert_contains "articles/why-machines-cannot-think/index.html" "Two honesties"
+assert_file "images/articles/ns-19-why-machines-cannot-think.png"
+assert_contains "articles/index.html" "Why machines cannot think"
 
 if [ "${1:-}" = "--links" ]; then
   check_links
