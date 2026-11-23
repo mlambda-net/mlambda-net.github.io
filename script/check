@@ -153,7 +153,7 @@ assert_file "products/actors/index.html"
 assert_file "products/actors/guide/getting-started.html"
 assert_file "products/data/index.html"
 assert_file "products/data/api-spec.html"
-assert_file "products/images/icons/aleph.png"
+assert_file "products/images/icons/aleph.svg"
 assert_file "products/images/science/circuit.png"
 for s in turing genesis aleph hilbert os ui; do assert_file "products/$s/index.html"; done
 assert_contains "products/turing/index.html" "/products/turing.html"

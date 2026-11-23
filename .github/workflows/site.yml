@@ -61,7 +61,7 @@ jobs:
           for f in index.html products/index.html products/genesis.html products/aleph.html products/max.html \
                    products/neuron.html products/turing.html products/muse.html products/quality.html \
                    products/actors/index.html products/actors/guide/actors.html products/data/index.html \
-                   products/images/icons/aleph.png products/turing/index.html; do
+                   products/images/icons/aleph.svg products/turing/index.html; do
             test -f "_site/$f" || { echo "missing: $f"; exit 1; }
           done
           if grep -rlE 'href="[^"]*\.md(#[^"]*)?"' _site/products; then echo "a link still names a .md"; exit 1; fi
