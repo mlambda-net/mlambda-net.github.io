@@ -40,8 +40,19 @@ def address(target):
     return page + hash_ + fragment
 
 
+def hero(text):
+    """The picture a page's front matter names as its `image`: the product layout shows it in the hero."""
+    m = re.match(r"---\n(.*?)\n---\n", text, re.S)
+    found = m and re.search(r"^image:\s*(\S+)\s*$", m.group(1), re.M)
+    return found.group(1) if found else None
+
+
 def rewrite(text):
     text = PRIVATE.sub(lambda m: m.group(1), text)
+    shown = hero(text)
+    if shown:
+        # the hero shows it already: the body's first line holding only that picture is dropped
+        text = re.sub(r"^!\[[^\]]*\]\(" + re.escape(shown) + r"\)\n\n?", "", text, count=1, flags=re.M)
     out, fenced = [], False
     for line in text.splitlines(keepends=True):
         if line.lstrip().startswith("```"):
