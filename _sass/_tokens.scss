@@ -1,5 +1,5 @@
 // The look follows the products' icons: white tiles, black ink, and one line of colour that runs through blue, red,
-// yellow and violet. No single brand blue: colour arrives as that spectrum, in small doses (a line, a dot, a glow).
+// yellow and violet in the icons only; text and lines use blue -> indigo -> violet (Roy: the four colours on letters read as a rainbow).
 // Light by default; dark when the reader asks (the switch in the masthead) or their system does.
 
 :root {
@@ -7,8 +7,8 @@
   --red: #ea4335;
   --yellow: #fbbc05;
   --violet: #8b5cf6;
-  --spectrum: linear-gradient(90deg, var(--blue), var(--red) 36%, var(--yellow) 68%, var(--violet));
-  --spectrum-soft: linear-gradient(90deg, #4285f41f, #ea43351f 36%, #fbbc051f 68%, #8b5cf61f);
+  --spectrum: linear-gradient(100deg, #3b82f6 0%, #6366f1 45%, #8b5cf6 75%, #a78bfa 100%);
+  --spectrum-soft: linear-gradient(100deg, #3b82f61f, #6366f11f 45%, #8b5cf61f 75%, #a78bfa1f);
 
   --ground: #ffffff;
   --ground-2: #f7f7f9;
