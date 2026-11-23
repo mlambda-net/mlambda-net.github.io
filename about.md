@@ -7,11 +7,7 @@ description: MLambda is a software company in Heredia, Costa Rica, founded in 20
 permalink: /about/
 ---
 
-<p>MLambda was founded in {{ site.data.company.founded }} in {{ site.data.company.location }},
-by <a href="{{ site.data.company.founder.url }}">{{ site.data.company.founder.name }}</a> — a
-software architect with eighteen years in distributed systems and a second degree in the
-philosophy of formal science. The company exists because of one conviction: most software is
-tested after the fact and trusted on faith, and it does not have to be.</p>
+<p>MLambda was founded in {{ site.data.company.founded }} in {{ site.data.company.location }}.</p>
 
 <h2>Where it came from</h2>
 
