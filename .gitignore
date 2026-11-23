@@ -5,3 +5,7 @@ _site
 .jekyll-cache
 .jekyll-metadata
 .superpowers/
+# written by script/products.py from MLambda.Docs
+_products/
+/products/
+_docs/

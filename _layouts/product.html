@@ -1,46 +1,68 @@
 ---
 layout: default
 ---
-{%- capture art %}product-art/{{ page.slug }}.svg{% endcapture -%}
+{%- comment -%}
+  A product's page (its front matter has a tagline) or one of its guide pages (it names the product it belongs to).
+  The page's own first heading is the title shown in the hero, so it is hidden in the body.
+{%- endcomment -%}
+{%- assign category = site.data.categories | where: "id", page.category | first -%}
+{%- if page.product and page.product != "catalog" and page.tagline == nil -%}
+  {%- assign home = site.products | where: "product", page.product | where_exp: "p", "p.tagline" | first -%}
+{%- endif -%}
 <div class="shell">
-  <div class="hero hero--split">
+  {%- if page.tagline %}
+  <div class="hero hero--split product-hero">
     <div>
-      {% include tier.html tier=page.tier %}
-      <h1>{{ page.title }}</h1>
+      <a class="eyebrow" href="{{ '/products/' | relative_url }}#{{ page.category }}">{{ category.name | default: "Products" }}</a>
+      <div class="product-hero__title">
+        {%- if page.icon %}<img class="product-hero__icon" src="{{ '/products/' | append: page.icon | relative_url }}" alt="" width="64" height="64">{% endif %}
+        <h1>{{ page.title }}</h1>
+      </div>
       <p class="hero__lede">{{ page.tagline }}</p>
-      <p class="mono muted">Status: {{ page.status }}</p>
+      <p class="status"><span class="status__dot" aria-hidden="true"></span>{{ page.status }}</p>
     </div>
-    <div class="art art--hero">{% include {{ art }} %}</div>
+    {%- if page.image %}
+    <figure class="shot"><img src="{{ '/products/' | append: page.image | relative_url }}" alt="{{ page.title }}" loading="eager"></figure>
+    {%- endif %}
   </div>
+  {%- else %}
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="{{ '/products/' | relative_url }}">Products</a>
+    {%- if home %} <span aria-hidden="true">/</span> <a href="{{ home.url | relative_url }}">{{ home.title }}</a>{% endif %}
+  </nav>
+  {%- endif %}
 
-  <div class="product">
+  <div class="product{% unless page.tagline %} product--guide{% endunless %}">
     <aside class="product__rail">
+      {%- if page.tagline %}
       <div class="rail-block">
-        {%- if page.url == "/products/turing/" %}
-        <a class="btn btn--primary" href="mailto:{{ site.data.company.email }}?subject=Turing%20demonstration">Request a demonstration</a>
-        {%- elsif page.tier == "commercial" %}
-        <a class="btn btn--primary" href="mailto:{{ site.data.company.email }}?subject={{ page.title | uri_escape }}%20early%20access">Request early access</a>
-        {%- elsif page.tier == "open" %}
-        <a class="btn btn--primary" href="mailto:{{ site.data.company.email }}?subject={{ page.title | uri_escape }}%20support">Commercial support</a>
+        {%- if page.store %}
+        <a class="btn btn--primary" href="https://store.mlambda.net/">Get it in the Store</a>
+        {%- else %}
+        <a class="btn btn--primary" href="mailto:{{ site.data.company.email }}?subject={{ page.title | uri_escape }}">Ask for a demonstration</a>
         {%- endif %}
       </div>
       <div class="rail-block">
-        <span class="rail-block__label">Where to verify</span>
+        <span class="rail-block__label">Status</span>
+        <p class="mono">{{ page.status }}</p>
+      </div>
+      {%- endif %}
+      {%- if home %}
+      <div class="rail-block">
+        <span class="rail-block__label">Part of</span>
+        <a href="{{ home.url | relative_url }}">{{ home.title }} →</a>
+      </div>
+      {%- endif %}
+      <div class="rail-block">
+        <span class="rail-block__label">Read next</span>
         <ul>
-          {%- if page.docs %}<li><a href="{{ page.docs }}">Documentation →</a></li>{% endif -%}
-          {%- for p in page.packages %}<li><a href="{{ p.url }}">{{ p.name }} on NuGet →</a></li>{% endfor -%}
-          {%- if page.docs == nil and page.packages.size == 0 %}<li class="muted">No public release.</li>{% endif -%}
+          <li><a href="{{ '/products/genesis.html' | relative_url }}">What we are building</a></li>
+          <li><a href="{{ '/products/quality.html' | relative_url }}">Quality and delivery</a></li>
+          <li><a href="{{ '/products/' | relative_url }}">All products</a></li>
         </ul>
       </div>
-      <div class="rail-block">
-        <span class="rail-block__label">Technology</span>
-        <ul class="tags">{% for t in page.tech %}<li class="tag">{{ t }}</li>{% endfor %}</ul>
-      </div>
-      <div class="rail-block">
-        <a class="btn" href="{{ '/products/' | relative_url }}">All products</a>
-      </div>
     </aside>
-    <div class="product__body">
+    <div class="product__body prose{% if page.tagline %} product__body--titled{% endif %}">
       {{ content }}
     </div>
   </div>

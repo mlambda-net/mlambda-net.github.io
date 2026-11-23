@@ -1,7 +1,13 @@
 name: Build and deploy site
 
+# The product pages are MLambda.Docs's products/ folder: the build checks that private repository out with a
+# read-only deploy key (the secret DOCS_DEPLOY_KEY; its public half is a deploy key on MLambda.Docs), lays it in
+# with script/products.py, and Jekyll compiles it with the rest of the site. A pull request is built and checked;
+# only main is deployed.
 on:
   push:
+    branches: ["main"]
+  pull_request:
     branches: ["main"]
   workflow_dispatch:
 
@@ -11,7 +17,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: false
 
 jobs:
@@ -20,6 +26,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Checkout MLambda.Docs
+        uses: actions/checkout@v4
+        with:
+          repository: mlambda-net/MLambda.Docs
+          ref: main
+          path: _docs
+          ssh-key: ${{ secrets.DOCS_DEPLOY_KEY }}
+          sparse-checkout: products
+          persist-credentials: false
+
+      - name: Lay the products in
+        run: python3 script/products.py _docs/products
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -36,12 +55,26 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Check the pages
+        run: |
+          set -e
+          for f in index.html products/index.html products/genesis.html products/aleph.html products/max.html \
+                   products/neuron.html products/turing.html products/muse.html products/quality.html \
+                   products/actors/index.html products/actors/guide/actors.html products/data/index.html \
+                   products/images/icons/aleph.png products/turing/index.html; do
+            test -f "_site/$f" || { echo "missing: $f"; exit 1; }
+          done
+          if grep -rlE 'href="[^"]*\.md(#[^"]*)?"' _site/products; then echo "a link still names a .md"; exit 1; fi
+          if grep -rl 'github.com/mlambda-net/MLambda' _site; then echo "a link into a private repository"; exit 1; fi
+
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site/
 
   deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

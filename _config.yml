@@ -1,20 +1,22 @@
 title: MLambda
 tagline: Software that is verified before it is built.
 description: >-
-  MLambda builds the stack for correct-by-construction software: the Genesis compiler
-  workbench, the Aleph language, the MLambda.Actors runtime, an actor-native database,
-  a reactive UI framework, a research microkernel, neuro-symbolic AI — and an agentic
-  factory that turns a description into a model-checked, tested, deployable system.
+  MLambda builds one family of software from the compiler up: the Aleph language and its native compiler,
+  Hilbert and Shin for mathematics and logic, a tensor engine on the GPU, an actor runtime and an actor-native
+  database, BDI agents with a neural engine, Turing for rational software, the tools that prove and deploy it,
+  and the services and applications a company runs.
 url: "https://www.mlambda.net"
 baseurl: ""
 lang: en
 
 permalink: pretty
 
+# The products are MLambda.Docs's products/ folder, laid in by script/products.py before the build (never edited
+# here): each page at /products/<path>.html, a folder's README at the folder.
 collections:
   products:
     output: true
-    permalink: /products/:name/
+    permalink: /products/:path:output_ext
 
 defaults:
   - scope:
@@ -38,4 +40,5 @@ exclude:
   - LICENSE
   - script
   - docs
+  - _docs
   - vendor
