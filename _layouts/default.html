@@ -19,5 +19,36 @@
   </main>
 
   {%- include footer.html -%}
+  <script>
+  // The carousels (_includes/carousel.html): arrows, dots, keys and swipes move one view at a time; a carousel turns
+  // by itself every six seconds unless the reader prefers less motion, or hovers or focuses it.
+  (function () {
+    var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.querySelectorAll("[data-carousel]").forEach(function (box) {
+      var track = box.querySelector(".carousel__track");
+      var slides = track.children, dots = box.querySelectorAll("[data-dot]"), count = box.querySelector("[data-count]");
+      var at = 0, held = false, timer = null;
+      function go(i) { at = (i + slides.length) % slides.length; track.scrollTo({ left: at * track.clientWidth }); }
+      function mark() {
+        var i = Math.round(track.scrollLeft / Math.max(track.clientWidth, 1));
+        at = i;
+        dots.forEach(function (d, k) { d.setAttribute("aria-selected", k === i ? "true" : "false"); });
+        if (count) count.textContent = String(i + 1);
+      }
+      var prev = box.querySelector("[data-prev]"), next = box.querySelector("[data-next]");
+      if (prev) prev.addEventListener("click", function () { go(at - 1); });
+      if (next) next.addEventListener("click", function () { go(at + 1); });
+      dots.forEach(function (d) { d.addEventListener("click", function () { go(Number(d.dataset.dot)); }); });
+      track.addEventListener("scroll", function () { window.requestAnimationFrame(mark); }, { passive: true });
+      box.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") { go(at + 1); e.preventDefault(); }
+        if (e.key === "ArrowLeft") { go(at - 1); e.preventDefault(); }
+      });
+      ["mouseenter", "focusin", "touchstart"].forEach(function (n) { box.addEventListener(n, function () { held = true; }, { passive: true }); });
+      ["mouseleave", "focusout"].forEach(function (n) { box.addEventListener(n, function () { held = false; }); });
+      if (!still && slides.length > 1) timer = window.setInterval(function () { if (!held && !document.hidden) go(at + 1); }, 6000);
+    });
+  })();
+  </script>
 </body>
 </html>

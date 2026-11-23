@@ -311,8 +311,7 @@
 .card__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
 .card__head { display: flex; align-items: center; gap: 0.7rem; }
 .card__head .card__title { margin: 0; }
-.card__icon { width: 40px; height: 40px; border-radius: 10px; flex: none; }
-.card__glyph { width: 40px; height: 40px; border-radius: 10px; flex: none; display: grid; place-items: center; font-family: var(--display); font-weight: 700; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+.card__icon { width: 44px; height: 44px; flex: none; }
 .card__meta { margin-top: auto; font-family: var(--mono); font-size: 0.78rem; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1rem; }
@@ -325,7 +324,7 @@
 .product-hero { padding-bottom: 2rem; }
 .product-hero .eyebrow { text-decoration: none; }
 .product-hero__title { display: flex; align-items: center; gap: 1rem; }
-.product-hero__icon { width: 64px; height: 64px; border-radius: 16px; box-shadow: var(--shadow); }
+.product-hero__icon { width: 64px; height: 64px; flex: none; filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35)); }
 .product-hero h1 { font-size: 2.8rem; }
 .status { display: inline-flex; align-items: center; gap: 0.5rem; margin: 1rem 0 0; padding: 0.3rem 0.8rem; border: 1px solid var(--rule); border-radius: 999px; font-family: var(--mono); font-size: 0.8rem; color: var(--muted); background: var(--surface); }
 .status__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--good); box-shadow: 0 0 8px var(--good); }
@@ -365,3 +364,41 @@
 .pair img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); border-radius: 8px; box-shadow: var(--shadow-lg); }
 .pair figcaption { margin-top: 0.5rem; color: var(--muted); font-size: 0.85rem; font-family: var(--mono); }
 @media (max-width: 700px) { .pair { grid-template-columns: 1fr; } }
+
+// Carousel: many views of a product, one at a time ----------------------------
+
+.carousel { position: relative; outline: none; border-radius: 12px; }
+.carousel__track {
+  display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none;
+  border: 1px solid var(--rule); border-radius: 12px; background: var(--surface);
+  box-shadow: var(--shadow-lg), 0 0 0 1px var(--glow);
+}
+.carousel__track::-webkit-scrollbar { display: none; }
+.carousel__slide { flex: 0 0 100%; margin: 0; scroll-snap-align: center; position: relative; aspect-ratio: 16 / 10; background: var(--nav); }
+.carousel__slide a { display: block; height: 100%; }
+.carousel__slide img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.carousel__slide figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 2.2rem 1.1rem 0.9rem; color: #fff; font-weight: 600;
+  background: linear-gradient(180deg, transparent, rgba(5, 6, 8, 0.82)); font-size: 0.95rem;
+}
+.carousel__arrow {
+  position: absolute; top: calc(50% - 1.6rem); width: 2.5rem; height: 2.5rem; border-radius: 50%; display: grid; place-items: center;
+  border: 1px solid var(--rule-strong); background: color-mix(in srgb, var(--surface) 78%, transparent); color: var(--ink);
+  backdrop-filter: blur(8px); cursor: pointer; opacity: 0; transition: opacity 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+.carousel:hover .carousel__arrow, .carousel:focus-within .carousel__arrow { opacity: 1; }
+.carousel__arrow:hover { border-color: var(--accent); transform: scale(1.06); }
+.carousel__arrow--prev { left: 0.8rem; }
+.carousel__arrow--next { right: 0.8rem; }
+.carousel__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 0.8rem; }
+.carousel__dots { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.carousel__dots button {
+  width: 0.55rem; height: 0.55rem; padding: 0; border-radius: 999px; border: 0; cursor: pointer;
+  background: var(--rule-strong); transition: width 220ms ease, background 220ms ease;
+}
+.carousel__dots button[aria-selected="true"] { width: 1.6rem; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+.carousel__count { color: var(--muted); font-size: 0.78rem; }
+.carousel--hero .carousel__slide { aspect-ratio: 16 / 10; }
+.carousel--wide .carousel__slide { aspect-ratio: 16 / 9; }
+@media (hover: none) { .carousel__arrow { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .carousel__track { scroll-behavior: auto; } }

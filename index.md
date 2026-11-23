@@ -18,10 +18,7 @@ description: MLambda builds one family of software from the compiler up — the 
       <a class="btn" href="{{ '/products/genesis.html' | relative_url }}">What we are building</a>
     </div>
   </div>
-  <figure class="shot">
-    <img src="{{ '/images/turing/04-model.png' | relative_url }}" alt="Turing composing a Guimel domain model from requirements: entities, commands, events, specifications and an aggregate whose handler allows, requires and emits." width="1894" height="910" loading="eager">
-    <figcaption class="mono">Turing — the domain model, composed from the requirements. Where a shape was not stated, it says so.</figcaption>
-  </figure>
+  {% include carousel.html slides=site.data.showcase title="MLambda products" class="carousel--hero" %}
 </section>
 
 <section class="section">

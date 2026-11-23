@@ -21,7 +21,9 @@ layout: default
       <p class="hero__lede">{{ page.tagline }}</p>
       <p class="status"><span class="status__dot" aria-hidden="true"></span>{{ page.status }}</p>
     </div>
-    {%- if page.image %}
+    {%- if page.gallery %}
+    {% include carousel.html pics=page.gallery title=page.title class="carousel--hero" %}
+    {%- elsif page.image %}
     <figure class="shot"><img src="{{ '/products/' | append: page.image | relative_url }}" alt="{{ page.title }}" loading="eager"></figure>
     {%- endif %}
   </div>
