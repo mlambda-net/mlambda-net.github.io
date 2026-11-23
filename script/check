@@ -10,6 +10,11 @@ VOLUME=jekyll-gems
 PASS=0
 FAIL=0
 
+products() {
+  echo "==> laying the products in from MLambda.Docs (script/products.py)"
+  "$(command -v python3 || command -v python)" script/products.py "${DOCS_PRODUCTS:-../../docs/products}" || bad "products not laid in"
+}
+
 build() {
   echo "==> building site (docker: $IMAGE, source copied in — no bind mount)"
   docker volume create "$VOLUME" >/dev/null
@@ -23,7 +28,7 @@ build() {
            && apt-get install -y -qq build-essential git >/dev/null 2>&1 \
            && bundle install --quiet \
            && bundle exec jekyll build')
-  tar --exclude=.git --exclude=_site --exclude=.superpowers --exclude=.jekyll-cache -cf - . \
+  tar --exclude=.git --exclude=_site --exclude=_docs --exclude=.superpowers --exclude=.jekyll-cache -cf - . \
     | MSYS_NO_PATHCONV=1 docker cp - "$cid":/srv/jekyll
   MSYS_NO_PATHCONV=1 docker start -a "$cid" 2>&1 | tee /tmp/jekyll-build.log
   local status=${PIPESTATUS[0]}
@@ -99,6 +104,7 @@ check_links() {
              | sort -u)
 }
 
+products
 build
 
 # --- assertions ---
@@ -118,8 +124,8 @@ assert_absent_regex_everywhere '\$[0-9]'
 assert_absent_everywhere "<script src="
 
 assert_file "assets/css/main.css"
-assert_contains "assets/css/main.css" "--ground: #0a0f1e"
-assert_contains "assets/css/main.css" "--accent: #7dd3fc"
+assert_contains "assets/css/main.css" "--ground: #17191c"
+assert_contains "assets/css/main.css" "--accent: #428aeb"
 assert_contains "assets/css/main.css" "prefers-color-scheme: light"
 assert_contains "assets/css/main.css" "JetBrains Mono"
 
@@ -137,42 +143,40 @@ assert_contains "about/index.html" "2019"
 assert_contains "about/index.html" "yordivad.github.io"
 assert_absent "about/index.html" "S.A."
 
-for s in turing genesis aleph actors data ui os hilbert; do assert_file "products/$s/index.html"; done
+# the products: MLambda.Docs's products/, compiled
 assert_file "products/index.html"
-assert_contains "products/genesis/index.html" "MIT"
-assert_contains "products/actors/index.html" "MIT"
-for s in turing aleph data ui os hilbert; do assert_absent "products/$s/index.html" "MIT"; done
-assert_contains "products/turing/index.html" "in active development; demonstrations by arrangement"
-assert_contains "products/genesis/index.html" "published on NuGet"
-assert_contains "products/aleph/index.html" "v1.2.0"
-assert_contains "products/actors/index.html" "v2.2 on NuGet"
-assert_contains "products/data/index.html" "in development"
-assert_contains "products/ui/index.html" "in development"
-assert_contains "products/os/index.html" "research microkernel"
-assert_contains "products/hilbert/index.html" "in development; documentation public"
-assert_contains "products/genesis/index.html" "genesis.mlambda.net"
-assert_contains "products/genesis/index.html" "nuget.org/packages/MLambda.Genesis.Parser"
-assert_contains "products/actors/index.html" "actors.mlambda.net"
-assert_contains "products/actors/index.html" "nuget.org/packages/MLambda.Actors"
-assert_contains "products/aleph/index.html" "genesis.mlambda.net/#/languages/aleph"
-assert_contains "products/data/index.html" "data.mlambda.net"
-assert_contains "products/ui/index.html" "mvvm.mlambda.net"
-assert_contains "products/os/index.html" "mlambda-net.github.io/MLambda.OS"
-assert_contains "products/turing/index.html" "genesis.mlambda.net"
-assert_contains "products/hilbert/index.html" "www.mlambda.net/MLambda.Hilbert/"
-assert_contains "products/hilbert/index.html" "Einstein"
-assert_absent "products/hilbert/index.html" "neuro-symbolic transformer"
-assert_contains "products/turing/index.html" "17 specialised agents"
-assert_contains "products/turing/index.html" "The story"
-assert_contains "products/turing/index.html" "images/turing/06-source.png"
-assert_contains "products/index.html" "tier--open"
-assert_contains "products/index.html" "tier--commercial"
-assert_absent "products/index.html" "tier--research"
+for s in genesis aleph hilbert shin tensor samek aphrodite dream max neuron turing os quality helios design \
+         oauth mail store iris aura ebank crm erp desk make muse factory transport scm wms lastmile shop box science; do
+  assert_file "products/$s.html"
+done
+assert_file "products/actors/index.html"
+assert_file "products/actors/guide/getting-started.html"
+assert_file "products/data/index.html"
+assert_file "products/data/api-spec.html"
+assert_file "products/images/icons/aleph.svg"
+assert_file "products/images/science/circuit.png"
+for s in turing genesis aleph hilbert os ui; do assert_file "products/$s/index.html"; done
+assert_contains "products/turing/index.html" "/products/turing.html"
+assert_contains "products/ui/index.html" "/products/aphrodite.html"
+assert_contains "products/index.html" 'id="language"'
+assert_contains "products/index.html" 'id="app"'
+assert_contains "products/index.html" "/products/muse.html"
+assert_contains "products/aleph.html" "The compiler decides nothing"
+assert_contains "products/aleph.html" "wasm64-unknown-unknown"
+assert_contains "products/max.html" "Moffatt"
+assert_contains "products/tensor.html" "rent-or-buy"
+assert_contains "products/quality.html" "security rated A"
+assert_contains "products/quality.html" "Arkhos"
+assert_contains "products/design.html" "Slider"
+assert_contains "products/muse.html" "images/muse/products.png"
+assert_contains "products/actors/index.html" "guide/topology.html"
+assert_absent_regex_everywhere 'href="[^"]*\.md(#[^"]*)?"'
+assert_contains "sitemap.xml" "/products/aleph.html"
 
 assert_contains "index.html" "<svg"
-assert_contains "index.html" "The stack"
-assert_contains "index.html" "tier--open"
-assert_contains "index.html" "MLambda Turing"
+assert_contains "index.html" "What we are building"
+assert_contains "index.html" "Quality and security first"
+assert_contains "index.html" "Designed, then proved side by side"
 assert_contains "index.html" "Hilbert"
 assert_contains "index.html" "Early access"
 assert_file "method/index.html"
@@ -187,9 +191,9 @@ assert_contains "services/index.html" 'id="commercial-licence-and-support"'
 assert_contains "services/index.html" 'id="early-access"'
 assert_contains "services/index.html" "roy.gonzalez@mlambda.net"
 assert_file "sitemap.xml"
-for r in products method services about products/turing products/genesis products/aleph products/actors products/data products/ui products/os products/hilbert; do assert_contains "sitemap.xml" "/$r/"; done
+for r in products method services about products/actors products/data; do assert_contains "sitemap.xml" "/$r/"; done
 assert_contains "index.html" "og:title"
-assert_contains "products/genesis/index.html" "og:description"
+assert_contains "products/genesis.html" "og:description"
 
 assert_contains "index.html" "Why it matters"
 assert_contains "index.html" "A verifiable model"
@@ -198,18 +202,17 @@ assert_contains "index.html" "Built for"
 assert_contains "index.html" "What's next"
 assert_contains "index.html" "Request a demonstration"
 assert_contains "index.html" "images/turing/04-model.png"
-assert_contains "index.html" 'class="card__art art"'
-assert_contains "products/aleph/index.html" 'class="art art--hero"'
-assert_contains "products/turing/index.html" "Request a demonstration"
-assert_contains "products/data/index.html" "Request early access"
+assert_contains "index.html" 'class="card__head"'
+assert_contains "products/aleph.html" 'class="product-hero__icon"'
+assert_contains "products/turing.html" "Ask for a demonstration"
+assert_contains "products/data/index.html" "Get it in the Store"
 assert_contains "services/index.html" 'id="demonstration"'
-assert_contains "assets/css/main.css" "Manrope"
+assert_contains "assets/css/main.css" "IBM Plex Sans"
 
 assert_contains "index.html" "The mission"
 assert_contains "index.html" "TOGAF"
 assert_contains "index.html" "reactive domain-driven design"
 assert_contains "about/index.html" "Where it came from"
-assert_contains "products/turing/index.html" "Where it came from"
 
 assert_contains "index.html" 'type="image/svg+xml" href="/images/favicon-32x32.svg"'
 assert_contains "about/index.html" 'class="page-head"'

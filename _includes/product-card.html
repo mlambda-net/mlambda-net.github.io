@@ -1,10 +1,13 @@
 {%- assign p = include.product -%}
-{%- capture art %}product-art/{{ p.slug }}.svg{% endcapture -%}
 <li>
   <a class="card" href="{{ p.url | relative_url }}">
-    <div class="card__art art">{% include {{ art }} %}</div>
-    {% include tier.html tier=p.tier %}
-    <h3 class="card__title">{{ p.title }}</h3>
+    {%- if p.image %}
+    <div class="card__shot"><img src="{{ '/products/' | append: p.image | relative_url }}" alt="" loading="lazy"></div>
+    {%- endif %}
+    <div class="card__head">
+      {%- if p.icon %}<img class="card__icon" src="{{ '/products/' | append: p.icon | relative_url }}" alt="" width="44" height="44" loading="lazy">{% endif %}
+      <h3 class="card__title">{{ p.title }}</h3>
+    </div>
     <p class="card__tagline">{{ p.tagline }}</p>
     <span class="card__meta">{{ p.status }}</span>
   </a>

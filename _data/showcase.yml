@@ -1,0 +1,28 @@
+# The home page's carousel: one view of each product, its caption and its page. Pictures are under /products/.
+- src: images/turing/04-model.png
+  caption: Turing — a domain model composed from the requirements
+  url: /products/turing.html
+- src: images/muse/site.png
+  caption: Muse — the company site and every product's page
+  url: /products/muse.html
+- src: images/shots/crm-deals.png
+  caption: MLambda CRM — every deal on its pipeline
+  url: /products/crm.html
+- src: images/science/proto-simulation.png
+  caption: MLambda Science — a CAD simulation sweep
+  url: /products/science.html
+- src: images/science/circuit.png
+  caption: MLambda Science — a quantum circuit, step by step, on Hilbert.Tensor
+  url: /products/science.html
+- src: images/neuron/models.png
+  caption: Neuron — models on the GPU
+  url: /products/neuron.html
+- src: images/shots/aleph-terminal.png
+  caption: Aleph — the language and its native compiler
+  url: /products/aleph.html
+- src: images/shots/oauth-tenants.png
+  caption: MLambda OAuth — one sign-in for every app
+  url: /products/oauth.html
+- src: images/shots/webmail-inbox.png
+  caption: MLambda Mail — your domain's mail
+  url: /products/mail.html

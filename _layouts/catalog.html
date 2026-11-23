@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{%- assign products = site.products | where_exp: "p", "p.tagline" | sort: "order" -%}
+<div class="shell">
+  <header class="page-head">
+    <span class="eyebrow">Products</span>
+    <h1>The MLambda catalog</h1>
+    <p class="lede">One family of software, built from the compiler up. Every page here is written in MLambda's
+    documentation and compiled into this site. Start with <a href="{{ '/products/genesis.html' | relative_url }}">what we are building</a>.</p>
+  </header>
+
+  <nav class="chips" aria-label="Sections">
+    {%- for c in site.data.categories %}
+    {%- assign here = products | where: "category", c.id %}{% if here.size > 0 %}
+    <a class="chip" href="#{{ c.id }}">{{ c.name }} <span class="chip__count">{{ here.size }}</span></a>
+    {%- endif %}{% endfor %}
+  </nav>
+
+  {%- for c in site.data.categories %}
+  {%- assign here = products | where: "category", c.id %}{% if here.size > 0 %}
+  <section class="section" id="{{ c.id }}">
+    <h2>{{ c.name }}</h2>
+    <p class="section__lede">{{ c.lede }}</p>
+    <ul class="grid-cards">
+      {%- for product in here %}{% include product-card.html product=product %}{% endfor %}
+    </ul>
+  </section>
+  {%- endif %}{% endfor %}
+</div>

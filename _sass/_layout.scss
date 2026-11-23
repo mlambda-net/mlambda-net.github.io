@@ -30,7 +30,7 @@
 
 .masthead__logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; }
 .masthead__logo .mark { height: 32px; width: 32px; border-radius: 7px; box-shadow: 0 0 0 1px var(--rule), 0 6px 16px -8px rgba(0, 0, 0, 0.6); }
-.wordmark { font-family: var(--display); font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--ink); line-height: 1; }
+.wordmark { font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--ink); line-height: 1; }
 .wordmark__accent { background: linear-gradient(92deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .site-footer .masthead__logo .mark { height: 28px; width: 28px; }
 .site-footer .wordmark { font-size: 1.1rem; }
@@ -54,7 +54,7 @@
   background: radial-gradient(34rem 18rem at 12% 40%, var(--glow), transparent 70%);
   pointer-events: none;
 }
-.page-head h1 { font-size: 2.7rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.4em; }
+.page-head h1 { font-size: 2.7rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 0.4em; }
 .page-head .lede { font-size: 1.2rem; }
 
 // Footer --------------------------------------------------------------------
@@ -85,7 +85,7 @@
 
 .product { display: grid; grid-template-columns: 14rem 1fr; gap: 0 3.5rem; align-items: start; }
 .product__rail { position: sticky; top: 5.5rem; }
-.product__body { max-width: var(--measure); }
+.product__body { max-width: var(--measure); min-width: 0; }
 .product__body h2 { margin-top: 2.2em; }
 
 @media (max-width: 768px) {

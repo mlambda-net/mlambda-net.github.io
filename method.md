@@ -41,7 +41,7 @@ evidence returns to the research gap list.</p>
 
 <h2>The agentic layer</h2>
 
-<p>The pipeline is run by agents. In <a href="{{ '/products/turing/' | relative_url }}">Turing</a>,
+<p>The pipeline is run by agents. In <a href="{{ '/products/turing.html' | relative_url }}">Turing</a>,
 a society of agents — a roster, expert agents, code agents — is coordinated by
 <strong>Gears</strong>, a build engine that drives declared workflows and writes each agent's
 report. As a Claude Code plugin, <strong>MLambda.Actor.Agent</strong> runs the same method with

@@ -1,7 +1,7 @@
 ---
 layout: home
 title: MLambda
-description: MLambda builds the stack for software that is verified before it is built — a compiler workbench, the Aleph language, an actor runtime, a distributed database, and Turing, an agentic architecture platform.
+description: MLambda builds one family of software from the compiler up — the Aleph language and compiler, Hilbert and Shin for mathematics and logic, a tensor engine on the GPU, actors and an actor-native database, BDI agents with a neural engine, Turing for rational software, and the apps a company runs.
 ---
 
 <section class="hero hero--split">
@@ -9,19 +9,16 @@ description: MLambda builds the stack for software that is verified before it is
     <span class="eyebrow">Software engineering, done as engineering</span>
     <h1>Software that is verified before it is built.</h1>
     <p class="hero__lede">A specification is a theorem. An implementation is its proof. MLambda builds
-    the stack that makes that literal — <strong>Turing</strong>, an architecture platform where LLM
-    agents turn a plain-language description into a formal model, check it, and generate the
-    system that follows; <strong>Aleph</strong>, a pure language in which whole classes of defects
-    cannot be written; and a runtime, a database and a UI framework built the same way.</p>
+    the whole stack that makes that literal, from the compiler up: <strong>Aleph</strong>, a pure language
+    and its native compiler; <strong>Hilbert</strong> and <strong>Shin</strong>, where every rule and every
+    formula lives; <strong>Turing</strong>, rational software that reasons about architecture before code;
+    and the runtime, the agents, the tools and the applications, all built the same way.</p>
     <div class="hero__actions">
       <a class="btn btn--primary" href="mailto:{{ site.data.company.email }}?subject=Turing%20demonstration">Request a demonstration</a>
-      <a class="btn" href="{{ '/products/' | relative_url }}">Products</a>
+      <a class="btn" href="{{ '/products/genesis.html' | relative_url }}">What we are building</a>
     </div>
   </div>
-  <figure class="shot">
-    <img src="{{ '/images/turing/04-model.png' | relative_url }}" alt="Turing composing a Guimel domain model from requirements: entities, commands, events, specifications and an aggregate whose handler allows, requires and emits." width="1894" height="910" loading="eager">
-    <figcaption class="mono">Turing — the domain model, composed from the requirements. Where a shape was not stated, it says so.</figcaption>
-  </figure>
+  {% include carousel.html slides=site.data.showcase title="MLambda products" class="carousel--hero" %}
 </section>
 
 <section class="section">
@@ -87,10 +84,10 @@ description: MLambda builds the stack for software that is verified before it is
   MLambda means by treating software as engineering: not a metaphor, a method.</p>
   </div>
   <ul class="proof">
-    <li><span class="proof__num">11</span><span class="proof__label">Genesis packages on NuGet</span></li>
-    <li><span class="proof__num">4</span><span class="proof__label">public documentation sites</span></li>
-    <li><span class="proof__num">TLA+</span><span class="proof__label">checked consistency model</span></li>
-    <li><span class="proof__num">17</span><span class="proof__label">pipeline agents, one per stage</span></li>
+    <li><span class="proof__num">~70</span><span class="proof__label">repositories in one family</span></li>
+    <li><span class="proof__num">9</span><span class="proof__label">targets the Aleph compiler emits</span></li>
+    <li><span class="proof__num">0 · A · A</span><span class="proof__label">warnings, security, reliability: Ayin's bar</span></li>
+    <li><span class="proof__num">95 %</span><span class="proof__label">coverage of derived scenes, at least</span></li>
     <li><span class="proof__num">2019</span><span class="proof__label">building since</span></li>
   </ul>
 </section>
@@ -131,16 +128,55 @@ description: MLambda builds the stack for software that is verified before it is
 </section>
 
 <section class="section">
-  <h2>The stack</h2>
-  <div class="diagram">{% include stack-diagram.svg %}</div>
+  <h2>What we are building</h2>
+  <p class="section__lede">One family of software in MLambda.Genesis, every layer written here. <a href="{{ '/products/genesis.html' | relative_url }}">How the parts fit →</a></p>
+  <ul class="stack">
+    <li><strong>Applications</strong><span><a href="{{ '/products/crm.html' | relative_url }}">CRM</a> · <a href="{{ '/products/erp.html' | relative_url }}">ERP</a> · <a href="{{ '/products/desk.html' | relative_url }}">Desk</a> · <a href="{{ '/products/make.html' | relative_url }}">Make</a> · <a href="{{ '/products/muse.html' | relative_url }}">Muse</a> · Factory · Transport · SCM · WMS · Last Mile · Shop · Box</span></li>
+    <li><strong>Services</strong><span><a href="{{ '/products/oauth.html' | relative_url }}">OAuth</a> · <a href="{{ '/products/mail.html' | relative_url }}">Mail</a> · <a href="{{ '/products/store.html' | relative_url }}">Store</a> · Iris · Aura · <a href="{{ '/products/helios.html' | relative_url }}">Helios</a> · EBank</span></li>
+    <li><strong>Intelligence</strong><span><a href="{{ '/products/turing.html' | relative_url }}">Turing</a>, rational software · <a href="{{ '/products/max.html' | relative_url }}">Max</a>, BDI agents · <a href="{{ '/products/neuron.html' | relative_url }}">Neuron</a>, the neural engine</span></li>
+    <li><strong>Delivery</strong><span><a href="{{ '/products/quality.html' | relative_url }}">Tsadi · Ayin · Litush · Katharsis · Arkhos</a> · <a href="{{ '/products/design.html' | relative_url }}">Playground</a></span></li>
+    <li><strong>Runtime</strong><span><a href="{{ '/products/actors/' | relative_url }}">MLambda.Actors</a> · <a href="{{ '/products/data/' | relative_url }}">MLambda.Data</a> · <a href="{{ '/products/os.html' | relative_url }}">MLambda.OS</a></span></li>
+    <li><strong>Languages</strong><span><a href="{{ '/products/aleph.html' | relative_url }}">Aleph</a> · <a href="{{ '/products/hilbert.html' | relative_url }}">Hilbert</a> · <a href="{{ '/products/shin.html' | relative_url }}">Shin</a> · <a href="{{ '/products/tensor.html' | relative_url }}">Tensor</a> · <a href="{{ '/products/samek.html' | relative_url }}">Samek</a> · <a href="{{ '/products/aphrodite.html' | relative_url }}">Aphrodite</a> · <a href="{{ '/products/dream.html' | relative_url }}">Dream</a></span></li>
+    <li><strong>Machine</strong><span>LLVM · native code on x86-64, ARM64, RISC-V and WebAssembly · the GPU through each system's own driver</span></li>
+  </ul>
+
+  <h3 style="margin-top:2.4rem">Four languages, four kinds of work</h3>
+  <ul class="split">
+    <li><strong>Aleph</strong><em>general logic</em><span>Plumbing, records, readers and wiring, as traits (interfaces) and instances (classes).</span></li>
+    <li><strong>Hilbert</strong><em>logic and mathematics</em><span>Every inference a Shin rule, every formula a law, every number on the tensor engine.</span></li>
+    <li><strong>Aphrodite</strong><em>what is seen</em><span>Theme, styles, widgets and screens, each view reading a store.</span></li>
+    <li><strong>Dream</strong><em>every test</em><span>Pages, states, acts and scenes, many of them derived from the model.</span></li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Quality and security first</h2>
+  <p class="section__lede">A change moves only when it is proved. Each tool has one job, and decides by logic. <a href="{{ '/products/quality.html' | relative_url }}">The path of a change →</a></p>
+  <ul class="split">
+    <li><strong>Tsadi</strong><em>creates the tests</em><span>Derives the test obligations from a system's laws, routes and states.</span></li>
+    <li><strong>Ayin</strong><em>judges the code</em><span>Green only with 0 warnings, security A, reliability A and coverage of at least 95 %.</span></li>
+    <li><strong>Litush</strong><em>polishes the code</em><span>Six agents refactor until Ayin is satisfied, at pre-commit or on a whole repository.</span></li>
+    <li><strong>Katharsis</strong><em>drives the release</em><span>Branch, dev, main, tag: green locally before GitHub, never stopping short of the tag.</span></li>
+    <li><strong>Arkhos</strong><em>deploys the microservices</em><span>Writes each client's infrastructure from the code's own facts, with a network policy for every route.</span></li>
+    <li><strong>Helios</strong><em>watches them</em><span>Traces, logs, metrics, watchers and objectives from every service. Apps integrate only by events, through Make.</span></li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Designed, then proved side by side</h2>
+  <p class="section__lede">Every screen starts as a clickable prototype. Playground drives the built window into the same states and lays the two on each other, with a slider, until they match. <a href="{{ '/products/design.html' | relative_url }}">How →</a></p>
+  <div class="pair">
+    <figure><img src="{{ '/products/images/compare/muse-products-canvas.png' | relative_url }}" alt="Muse's products, the prototype canvas" loading="lazy"><figcaption>the prototype</figcaption></figure>
+    <figure><img src="{{ '/products/images/compare/muse-products-window.png' | relative_url }}" alt="Muse's products, the built window" loading="lazy"><figcaption>the window, built in Aphrodite</figcaption></figure>
+  </div>
 </section>
 
 <section class="section">
   <h2>Products</h2>
-  <p class="section__lede">Two tiers, stated on every page: <span class="tier tier--open">Open · MIT</span> on NuGet with public documentation, and <span class="tier tier--commercial">Commercial · early access</span> with public documentation and source by arrangement.</p>
-  {% assign all = site.products | sort: "weight" %}
+  <p class="section__lede">A few to start with. <a href="{{ '/products/' | relative_url }}">The whole catalog →</a></p>
+  {%- assign picks = "aleph,hilbert,tensor,max,neuron,turing,muse,crm,science" | split: "," %}
   <ul class="grid-cards">
-  {% for product in all %}{% include product-card.html product=product %}{% endfor %}
+  {%- for slug in picks %}{% assign rp = "_products/" | append: slug | append: ".md" %}{% assign product = site.products | where: "relative_path", rp | first %}{% if product %}{% include product-card.html product=product %}{% endif %}{% endfor %}
   </ul>
 </section>
 
@@ -157,13 +193,13 @@ description: MLambda builds the stack for software that is verified before it is
 
 <section class="section">
   <h2>What's next</h2>
-  <p class="section__lede">Direction, not dates. Genesis and Turing's backlog is public — every gap has an epic and an issue.</p>
+  <p class="section__lede">Direction, not dates.</p>
   <ul class="roadmap">
-    <li><strong>Turing</strong><span>Execute the generated end-to-end suites; deepen static analysis; a catalogue of business agents; deployment-verification depth; hardening of the web surface; a second emission target.</span></li>
-    <li><strong>Aleph</strong><span>Networking through the FFI, TLS, a tracing garbage collector, and let-polymorphism for top-level functions.</span></li>
-    <li><strong>Genesis</strong><span>Gears promoted to a top-level module; Thinker's deferred capabilities.</span></li>
+    <li><strong>Applications</strong><span>Release 1 of ERP, Desk, Make, Factory, Transport, SCM, WMS, Last Mile, Shop and Box, each deployed per client and proved against its prototype.</span></li>
+    <li><strong>Turing</strong><span>From the accepted design to the services, screens and tests the other languages build.</span></li>
+    <li><strong>Muse</strong><span>Marketing around the product: its assets, its page and its campaigns, with Neuron's models.</span></li>
+    <li><strong>MLambda.OS</strong><span>Machines that join into one operating system on actors, updated live.</span></li>
   </ul>
-  <p><a href="https://genesis.mlambda.net/#/architecture/60-status">Read the status register →</a></p>
 </section>
 
 <section class="section">

@@ -1,0 +1,25 @@
+# The catalog's sections, in order. A product's front matter names its `category` by id.
+- id: platform
+  name: The platform
+  lede: What MLambda is building, and how the parts fit.
+- id: language
+  name: Languages
+  lede: Every part of the family is written in its own languages, each for one kind of work.
+- id: intelligence
+  name: Intelligence
+  lede: Models perceive, logic decides, and software is reasoned about as architecture.
+- id: runtime
+  name: The runtime
+  lede: Actors, a database made of actors, and an operating system.
+- id: quality
+  name: Quality, delivery and design
+  lede: Tests derived from models, a quality bar every change passes, and screens proved against their prototypes.
+- id: service
+  name: Services
+  lede: What every app stands on.
+- id: app
+  name: Applications
+  lede: The software a company runs, each app a set of microservices that talk only by events.
+- id: science
+  name: Science
+  lede: A workbench for science and engineering.
