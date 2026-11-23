@@ -9,15 +9,13 @@ wide: true
 ---
 
 {% assign posts = site.pages | where_exp: "p", "p.url contains '/articles/' and p.url != '/articles/'" | sort: "path" | reverse %}
-<ul class="grid-cards">
-{% for a in posts %}
-  <li>
-    <a class="card" href="{{ a.url | relative_url }}">
-      {% if a.image %}<div class="card__art"><img src="{{ a.image | relative_url }}" alt="" width="1200" height="627" loading="lazy" style="display:block;border-radius:4px"></div>{% endif %}
-      <span class="card__meta">{{ a.eyebrow }}</span>
-      <h3 class="card__title">{{ a.title }}</h3>
-      <p class="card__tagline">{{ a.subtitle }}</p>
-    </a>
-  </li>
-{% endfor %}
+<ul class="essays essays--all">
+{%- for a in posts %}
+  <li><a href="{{ a.url | relative_url }}">
+    {%- if a.image %}<img class="essays__img" src="{{ a.image | relative_url }}" alt="" loading="lazy">{% endif %}
+    <span class="essays__kicker">{{ a.eyebrow | remove: "Article · " }}</span>
+    <span class="essays__title">{{ a.title }}</span>
+    <span class="essays__line">{{ a.subtitle }}</span>
+  </a></li>
+{%- endfor %}
 </ul>

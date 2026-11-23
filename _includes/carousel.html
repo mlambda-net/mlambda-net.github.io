@@ -1,34 +1,37 @@
 {%- comment -%}
-  A carousel of pictures. include.slides: a list of { src, caption, url } (src under /products/), or
-  include.pics: a list of paths under /products/ with include.title naming them. One slide shows at a time; arrows,
-  dots, the keyboard and a swipe move it; it turns by itself every few seconds unless the reader prefers less motion,
-  hovers or focuses it. Its script is the default layout's (no script is loaded from elsewhere).
+  A carousel of pictures: the slides laid on each other, one shown at a time, cross-fading. include.slides: a list of
+  { src, caption, url } (src under /products/), or include.pics: a list of paths under /products/ with include.title.
+  Arrows, dots, keys and a swipe move it; it turns by itself unless the reader prefers less motion or is looking at
+  it. Its script is the default layout's. Pictures carry the build's version, so a new build is never served stale.
 {%- endcomment -%}
 {%- if include.slides -%}{%- assign slides = include.slides -%}{%- else -%}{%- assign slides = include.pics -%}{%- endif -%}
+{%- assign v = site.time | date: '%s' -%}
 <div class="carousel{% if include.class %} {{ include.class }}{% endif %}" data-carousel role="region" aria-roledescription="carousel" aria-label="{{ include.title | default: 'Views' | escape }}" tabindex="0">
-  <div class="carousel__track">
+  <div class="carousel__stage">
     {%- for s in slides %}
     {%- if s.src %}{% assign src = s.src %}{% assign caption = s.caption %}{% assign link = s.url %}{% else %}{% assign src = s %}{% assign caption = nil %}{% assign link = nil %}{% endif %}
-    <figure class="carousel__slide" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ slides.size }}">
+    <figure class="carousel__slide{% if forloop.first %} is-shown{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ slides.size }}">
       {%- if link %}<a href="{{ link | relative_url }}">{% endif %}
-      <img src="{{ '/products/' | append: src | relative_url }}" alt="{% if caption %}{{ caption | escape }}{% else %}{{ include.title | escape }}, view {{ forloop.index }}{% endif %}"{% if forloop.first %} loading="eager"{% else %} loading="lazy"{% endif %}>
+      <img src="{{ '/products/' | append: src | relative_url }}?v={{ v }}" alt="{% if caption %}{{ caption | escape }}{% else %}{{ include.title | escape }}, view {{ forloop.index }}{% endif %}"{% unless forloop.first %} loading="lazy"{% endunless %}>
       {%- if caption %}<figcaption>{{ caption }}</figcaption>{% endif %}
       {%- if link %}</a>{% endif %}
     </figure>
     {%- endfor %}
+    {%- if slides.size > 1 %}
+    <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Previous view" data-prev>
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Next view" data-next>
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    {%- endif %}
   </div>
   {%- if slides.size > 1 %}
-  <button class="carousel__arrow carousel__arrow--prev" type="button" aria-label="Previous view" data-prev>
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
-  <button class="carousel__arrow carousel__arrow--next" type="button" aria-label="Next view" data-next>
-    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </button>
   <div class="carousel__bar">
     <div class="carousel__dots" role="tablist">
-      {%- for s in slides %}<button type="button" role="tab" aria-label="View {{ forloop.index }}" data-dot="{{ forloop.index0 }}"{% if forloop.first %} aria-selected="true"{% endif %}></button>{% endfor -%}
+      {%- for s in slides %}<button type="button" role="tab" aria-label="View {{ forloop.index }}" data-dot="{{ forloop.index0 }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"></button>{% endfor -%}
     </div>
-    <span class="carousel__count mono"><span data-count>1</span> / {{ slides.size }}</span>
+    <span class="carousel__count"><span data-count>1</span> / {{ slides.size }}</span>
   </div>
   {%- endif %}
 </div>

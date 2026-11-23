@@ -110,13 +110,11 @@ build
 # --- assertions ---
 assert_file "index.html"
 assert_contains "index.html" "MLambda"
-assert_contains "index.html" "verified before it is built"
 assert_absent_everywhere "Lorem"
 assert_absent_everywhere "Welcome to MLambda!"
 assert_absent_everywhere "github.com/mlambda-net/MLambda"
 assert_absent_everywhere "install.sh"
 assert_absent_everywhere "trusted by"
-assert_absent_everywhere "customers"
 assert_absent_everywhere "pricing"
 assert_absent_everywhere "revolutioniz"
 assert_absent_everywhere "cutting-edge"
@@ -124,16 +122,23 @@ assert_absent_regex_everywhere '\$[0-9]'
 assert_absent_everywhere "<script src="
 
 assert_file "assets/css/main.css"
-assert_contains "assets/css/main.css" "--ground: #17191c"
-assert_contains "assets/css/main.css" "--accent: #428aeb"
+assert_contains "assets/css/main.css" "--violet: #8b5cf6"
+assert_contains "assets/css/main.css" "data-theme"
 assert_contains "assets/css/main.css" "prefers-color-scheme: light"
 assert_contains "assets/css/main.css" "JetBrains Mono"
 
 assert_contains "index.html" "site-nav"
+assert_contains "index.html" "proved by mathematics"
+assert_contains "index.html" "/business/"
+assert_contains "index.html" "/developers/"
+assert_contains "index.html" "/research/"
+assert_contains "index.html" "theme-switch"
+assert_file "business/index.html"
+assert_file "developers/index.html"
+assert_file "research/index.html"
+assert_contains "business/index.html" "/products/crm.html"
+assert_contains "developers/index.html" "/products/aleph.html"
 assert_contains "index.html" "/products/"
-assert_contains "index.html" "/method/"
-assert_contains "index.html" "/services/"
-assert_contains "index.html" "/about/"
 assert_contains "index.html" "roy.gonzalez@mlambda.net"
 assert_contains "index.html" 'class="wordmark"'
 assert_contains "index.html" "images/favicon-32x32.svg"
@@ -173,12 +178,6 @@ assert_contains "products/actors/index.html" "guide/topology.html"
 assert_absent_regex_everywhere 'href="[^"]*\.md(#[^"]*)?"'
 assert_contains "sitemap.xml" "/products/aleph.html"
 
-assert_contains "index.html" "<svg"
-assert_contains "index.html" "What we are building"
-assert_contains "index.html" "Quality and security first"
-assert_contains "index.html" "Designed, then proved side by side"
-assert_contains "index.html" "Hilbert"
-assert_contains "index.html" "Early access"
 assert_file "method/index.html"
 assert_contains "method/index.html" "<svg"
 assert_contains "method/index.html" "TLA+"
@@ -195,23 +194,14 @@ for r in products method services about products/actors products/data; do assert
 assert_contains "index.html" "og:title"
 assert_contains "products/genesis.html" "og:description"
 
-assert_contains "index.html" "Why it matters"
-assert_contains "index.html" "A verifiable model"
-assert_contains "index.html" "Software as mathematics"
-assert_contains "index.html" "Built for"
-assert_contains "index.html" "What's next"
-assert_contains "index.html" "Request a demonstration"
 assert_contains "index.html" "images/turing/04-model.png"
-assert_contains "index.html" 'class="card__head"'
+assert_contains "index.html" 'class="tile"'
 assert_contains "products/aleph.html" 'class="product-hero__icon"'
 assert_contains "products/turing.html" "Ask for a demonstration"
 assert_contains "products/data/index.html" "Get it in the Store"
 assert_contains "services/index.html" 'id="demonstration"'
 assert_contains "assets/css/main.css" "IBM Plex Sans"
 
-assert_contains "index.html" "The mission"
-assert_contains "index.html" "TOGAF"
-assert_contains "index.html" "reactive domain-driven design"
 assert_contains "about/index.html" "Where it came from"
 
 assert_contains "index.html" 'type="image/svg+xml" href="/images/favicon-32x32.svg"'

@@ -1,14 +1,16 @@
+{%- comment -%}
+  A product's tile, as an app store shows it: the icon, the name, two lines of what it is, its status. Every tile is
+  the same size; a product's views are on its own page, in its carousel.
+{%- endcomment -%}
 {%- assign p = include.product -%}
 <li>
-  <a class="card" href="{{ p.url | relative_url }}">
-    {%- if p.image %}
-    <div class="card__shot"><img src="{{ '/products/' | append: p.image | relative_url }}" alt="" loading="lazy"></div>
-    {%- endif %}
-    <div class="card__head">
-      {%- if p.icon %}<img class="card__icon" src="{{ '/products/' | append: p.icon | relative_url }}" alt="" width="44" height="44" loading="lazy">{% endif %}
-      <h3 class="card__title">{{ p.title }}</h3>
-    </div>
-    <p class="card__tagline">{{ p.tagline }}</p>
-    <span class="card__meta">{{ p.status }}</span>
+  <a class="tile" href="{{ p.url | relative_url }}">
+    {%- if p.icon %}<img class="tile__icon" src="{{ '/products/' | append: p.icon | relative_url }}?v={{ site.time | date: '%s' }}" alt="" width="60" height="60" loading="lazy">{% endif %}
+    <span class="tile__text">
+      <span class="tile__name">{{ p.title }}</span>
+      <span class="tile__line">{{ p.tagline }}</span>
+      <span class="tile__status{% if p.store %} tile__status--out{% endif %}">{% if p.store %}In the Store{% else %}{{ p.status | split: '·' | first | split: ',' | first | split: ';' | first | strip }}{% endif %}</span>
+    </span>
+    <svg class="tile__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
   </a>
 </li>
