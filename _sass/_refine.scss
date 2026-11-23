@@ -293,3 +293,10 @@ h2::before { background: var(--spectrum) !important; width: 2.4rem !important; h
 .essays__kicker { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 .essays__title { color: var(--ink); font-weight: 700; font-size: 1.1rem; letter-spacing: -0.015em; }
 .essays__line { color: var(--muted); font-size: 0.92rem; line-height: 1.55; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+// Finishing
+
+.site-nav a { font-family: var(--body); font-weight: 500; letter-spacing: 0; text-transform: none; }
+.services { grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr)); }
+@media (max-width: 900px) { .services { grid-template-columns: 1fr; } }
+.tile__status { max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
