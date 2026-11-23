@@ -2,8 +2,8 @@
 - src: images/turing/04-model.png
   caption: Turing — a domain model composed from the requirements
   url: /products/turing.html
-- src: images/muse/products.png
-  caption: Muse — marketing around the product
+- src: images/muse/site.png
+  caption: Muse — the company site and every product's page
   url: /products/muse.html
 - src: images/shots/crm-deals.png
   caption: MLambda CRM — every deal on its pipeline
