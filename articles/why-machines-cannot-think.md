@@ -3,7 +3,7 @@ layout: page
 eyebrow: Essay · Philosophy of AI
 title: Why machines cannot think
 subtitle: A projection can take many dimensions down to three. Nothing can take three back up to many. A machine that computes inside three-dimensional space, on data that is itself a shadow, can lose information but never recover it — and the mind is in what was lost.
-description: A philosophical essay by Roy Gonzalez. If the world we experience is a three-dimensional projection of a reality with more dimensions, and consciousness belongs to what the projection discards, then a machine built and trained entirely inside the projection cannot think or become conscious. The mathematics of why: a projection has no inverse, no smooth or one-to-one map from three dimensions fills a larger space (Sard, Brouwer), and no processing creates information the data did not carry (the data-processing inequality). Text is a shadow of a shadow. Turing's imitation game tests the shadow.
+description: "A philosophical essay by Roy Gonzalez. If the world we experience is a three-dimensional projection of a reality with more dimensions, and consciousness belongs to what the projection discards, then a machine built and trained entirely inside the projection cannot think or become conscious. The mathematics of why: a projection has no inverse, no smooth or one-to-one map from three dimensions fills a larger space (Sard, Brouwer), and no processing creates information the data did not carry (the data-processing inequality). Text is a shadow of a shadow. Turing's imitation game tests the shadow."
 permalink: /articles/why-machines-cannot-think/
 image: /images/articles/ns-19-why-machines-cannot-think.png
 ---
